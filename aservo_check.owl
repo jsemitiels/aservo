@@ -1,0 +1,2936 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="https://www.wid.org/aservo#"
+     xml:base="https://www.wid.org/aservo"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:urn="urn:webprotege:ontology:6d655d97-618e-4cd2-840b-832a836ae541#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:core="https://saref.etsi.org/core/"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:sare="https://saref.etsi.org/saref4envi/"
+     xmlns:swrl="http://www.w3.org/2003/11/swrl#"
+     xmlns:wgs8="http://www.w3.org/2003/01/geo/wgs84_pos#"
+     xmlns:swrlb="http://www.w3.org/2003/11/swrlb#"
+     xmlns:terms="http://purl.org/dc/terms/"
+     xmlns:aservo="https://www.wid.org/aservo#"
+     xmlns:webprotege="http://webprotege.stanford.edu/">
+    <owl:Ontology rdf:about="https://www.wid.org/aservo">
+        <owl:versionIRI rdf:resource="https://www.wid.org/aservo"/>
+        <terms:license>http://purl.org/NET/rdflicense/cc-by4.0</terms:license>
+        <rdfs:label>Ontology about Volcanic Eruption created by Juan Semitiel Saorín</rdfs:label>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.org/dc/terms/license -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/license"/>
+    
+
+
+    <!-- http://www.w3.org/2000/01/rdf-schema#sameAs -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2000/01/rdf-schema#sameAs"/>
+    
+
+
+    <!-- http://www.w3.org/2001/XMLSchema#Date -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2001/XMLSchema#Date">
+        <rdfs:label xml:lang="en">xsd:Date</rdfs:label>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.w3.org/2003/01/geo/wgs84_pos#Location -->
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/2003/01/geo/wgs84_pos#Location">
+        <rdfs:domain rdf:resource="https://saref.etsi.org/saref4envi/SpatialObject"/>
+        <rdfs:range rdf:resource="https://saref.etsi.org/saref4envi/SpatialThing"/>
+        <rdfs:label>Location of the spatial thing related with a spatial object</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://saref.etsi.org/core/hasProperty -->
+
+    <owl:ObjectProperty rdf:about="https://saref.etsi.org/core/hasProperty">
+        <owl:inverseOf rdf:resource="https://saref.etsi.org/core/isPropertyOf"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="https://saref.etsi.org/core/FeatureOfInterest"/>
+        <rdfs:range rdf:resource="https://saref.etsi.org/core/Property"/>
+        <rdfs:label>Property of a feature of interest</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://saref.etsi.org/core/isPropertyOf -->
+
+    <owl:ObjectProperty rdf:about="https://saref.etsi.org/core/isPropertyOf">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="https://saref.etsi.org/core/Property"/>
+        <rdfs:range rdf:resource="https://saref.etsi.org/core/FeatureOfInterest"/>
+        <rdfs:label>Property related to a feature of interest</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.wid.org/aservo#affectedBy -->
+
+    <owl:ObjectProperty rdf:about="https://www.wid.org/aservo#affectedBy">
+        <owl:inverseOf rdf:resource="https://www.wid.org/aservo:aservo#relatesWith"/>
+        <rdfs:domain rdf:resource="https://www.wid.org/aservo#VolcanicEruption"/>
+        <rdfs:range rdf:resource="https://www.wid.org/aservo#SeismicActivity"/>
+        <rdfs:label>A volcanic eruption is affected by the seismic activity</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.wid.org/aservo#causedBy -->
+
+    <owl:ObjectProperty rdf:about="https://www.wid.org/aservo#causedBy">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:inverseOf rdf:resource="https://www.wid.org/aservo:aservo#provokes"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="https://www.wid.org/aservo#PopulationRisks"/>
+        <rdfs:range rdf:resource="https://www.wid.org/aservo#VolcanicEruption"/>
+        <rdfs:label>Populations risks caused by a volcanic eruption</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.wid.org/aservo#emanate -->
+
+    <owl:ObjectProperty rdf:about="https://www.wid.org/aservo#emanate">
+        <owl:inverseOf rdf:resource="https://www.wid.org/aservo:aservo#emanatedBy"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdfs:domain rdf:resource="https://www.wid.org/aservo#VolcanicEruption"/>
+        <rdfs:range rdf:resource="https://www.wid.org/aservo#LavaFlow"/>
+        <rdfs:label>A volcanic eruption emanate lava flow</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.wid.org/aservo#hasMeasurement -->
+
+    <owl:ObjectProperty rdf:about="https://www.wid.org/aservo#hasMeasurement">
+        <owl:inverseOf rdf:resource="https://www.wid.org/aservo#isMeasurementOf"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="https://saref.etsi.org/core/FeatureOfInterest"/>
+        <rdfs:range rdf:resource="https://saref.etsi.org/saref4envi/Measurement"/>
+        <rdfs:label>Measures of a feature of interest</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.wid.org/aservo#isMeasurementOf -->
+
+    <owl:ObjectProperty rdf:about="https://www.wid.org/aservo#isMeasurementOf">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="https://saref.etsi.org/saref4envi/Measurement"/>
+        <rdfs:range rdf:resource="https://saref.etsi.org/core/FeatureOfInterest"/>
+        <rdfs:label>The measurement related to a feature of interest</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.wid.org/aservo#madeMeasureTo -->
+
+    <owl:ObjectProperty rdf:about="https://www.wid.org/aservo#madeMeasureTo">
+        <owl:inverseOf rdf:resource="https://www.wid.org/aservo#measurementMadeBy"/>
+        <rdfs:domain rdf:resource="https://saref.etsi.org/core/Device"/>
+        <rdfs:range rdf:resource="https://www.wid.org/aservo#LavaFlow"/>
+        <rdfs:label>Device makes lava flow measurements</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.wid.org/aservo#measureTo -->
+
+    <owl:ObjectProperty rdf:about="https://www.wid.org/aservo#measureTo">
+        <rdfs:domain rdf:resource="https://saref.etsi.org/core/Device"/>
+        <rdfs:range rdf:resource="https://www.wid.org/aservo#AirQuality"/>
+        <rdfs:label>A devide measure to the air quality</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.wid.org/aservo#measuredBy -->
+
+    <owl:ObjectProperty rdf:about="https://www.wid.org/aservo#measuredBy">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="https://www.wid.org/aservo#AirQuality"/>
+        <rdfs:range rdf:resource="https://saref.etsi.org/core/Device"/>
+        <rdfs:label>Device used to measure</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.wid.org/aservo#measurementMadeBy -->
+
+    <owl:ObjectProperty rdf:about="https://www.wid.org/aservo#measurementMadeBy">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="https://www.wid.org/aservo#LavaFlow"/>
+        <rdfs:range rdf:resource="https://saref.etsi.org/core/Device"/>
+        <rdfs:label>The lava flow is measured by devices</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.wid.org/aservo#relatesToMeasurement -->
+
+    <owl:ObjectProperty rdf:about="https://www.wid.org/aservo#relatesToMeasurement">
+        <owl:inverseOf rdf:resource="https://www.wid.org/aservo#relatesToProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="https://saref.etsi.org/core/Property"/>
+        <rdfs:range rdf:resource="https://saref.etsi.org/saref4envi/Measurement"/>
+        <rdfs:label>Property relates to a measurement</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.wid.org/aservo#relatesToProperty -->
+
+    <owl:ObjectProperty rdf:about="https://www.wid.org/aservo#relatesToProperty">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="https://saref.etsi.org/saref4envi/Measurement"/>
+        <rdfs:range rdf:resource="https://saref.etsi.org/core/Property"/>
+        <rdfs:label>Measurement relates to a property</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.wid.org/aservo:aservo#emanatedBy -->
+
+    <owl:ObjectProperty rdf:about="https://www.wid.org/aservo:aservo#emanatedBy">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
+        <rdfs:domain rdf:resource="https://www.wid.org/aservo#LavaFlow"/>
+        <rdfs:range rdf:resource="https://www.wid.org/aservo#VolcanicEruption"/>
+        <rdfs:label>Lava flow emanated by a volcan eruption</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.wid.org/aservo:aservo#provokes -->
+
+    <owl:ObjectProperty rdf:about="https://www.wid.org/aservo:aservo#provokes">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
+        <rdfs:domain rdf:resource="https://www.wid.org/aservo#VolcanicEruption"/>
+        <rdfs:range rdf:resource="https://www.wid.org/aservo#PopulationRisks"/>
+        <rdfs:label>A volcanic eruption provokes population risks</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.wid.org/aservo:aservo#relatesWith -->
+
+    <owl:ObjectProperty rdf:about="https://www.wid.org/aservo:aservo#relatesWith">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
+        <rdfs:domain rdf:resource="https://www.wid.org/aservo#SeismicActivity"/>
+        <rdfs:range rdf:resource="https://www.wid.org/aservo#VolcanicEruption"/>
+        <rdfs:label>A seismic activity related with a volcanic eruption</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.w3.org/2003/01/geo/wgs84_pos#lat -->
+
+    <owl:DatatypeProperty rdf:about="http://www.w3.org/2003/01/geo/wgs84_pos#lat">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="https://saref.etsi.org/saref4envi/SpatialThing"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+        <rdfs:label>Latitude</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.w3.org/2003/01/geo/wgs84_pos#lon -->
+
+    <owl:DatatypeProperty rdf:about="http://www.w3.org/2003/01/geo/wgs84_pos#lon">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="https://saref.etsi.org/saref4envi/SpatialThing"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+        <rdfs:label>Longitude</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://www.wid.org/aservo#hasArea -->
+
+    <owl:DatatypeProperty rdf:about="https://www.wid.org/aservo#hasArea">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="https://www.wid.org/aservo#LavaFlow"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+        <rdfs:label>Area of the lava flow</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://www.wid.org/aservo#hasCount -->
+
+    <owl:DatatypeProperty rdf:about="https://www.wid.org/aservo#hasCount">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="https://www.wid.org/aservo#AffectedBuildings"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:label>Number of affected buildings</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://www.wid.org/aservo#hasDepth -->
+
+    <owl:DatatypeProperty rdf:about="https://www.wid.org/aservo#hasDepth">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="https://www.wid.org/aservo#SeismicActivity"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+        <rdfs:label>The depth of a seismic activity</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://www.wid.org/aservo#hasDurationInDays -->
+
+    <owl:DatatypeProperty rdf:about="https://www.wid.org/aservo#hasDurationInDays">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="https://www.wid.org/aservo#VolcanicEruption"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Days of duration of the volcanic eruption</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://www.wid.org/aservo#hasHectares -->
+
+    <owl:DatatypeProperty rdf:about="https://www.wid.org/aservo#hasHectares">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="https://www.wid.org/aservo#LavaFlow"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+        <rdfs:label>Hectares</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://www.wid.org/aservo#hasHourAverage -->
+
+    <owl:DatatypeProperty rdf:about="https://www.wid.org/aservo#hasHourAverage">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="https://saref.etsi.org/saref4envi/Measurement"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+        <rdfs:label>Average in a hour</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://www.wid.org/aservo#hasIntensity -->
+
+    <owl:DatatypeProperty rdf:about="https://www.wid.org/aservo#hasIntensity">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="https://www.wid.org/aservo#PhisycalProperty"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+        <rdfs:label>The intensity of a seismic activity</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://www.wid.org/aservo#hasLongitude -->
+
+    <owl:DatatypeProperty rdf:about="https://www.wid.org/aservo#hasLongitude">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="https://www.wid.org/aservo#PhisycalProperty"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+        <rdfs:label>The longitude of a seismic activity</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://www.wid.org/aservo#hasMagnitude -->
+
+    <owl:DatatypeProperty rdf:about="https://www.wid.org/aservo#hasMagnitude">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="https://www.wid.org/aservo#PhisycalProperty"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+        <rdfs:label>Magnitude of seismic activity</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://www.wid.org/aservo#hasMaterialVolume -->
+
+    <owl:DatatypeProperty rdf:about="https://www.wid.org/aservo#hasMaterialVolume">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="https://www.wid.org/aservo#VolcanicEruption"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:label>The material volume of a volcanic eruption</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://www.wid.org/aservo#hasName -->
+
+    <owl:DatatypeProperty rdf:about="https://www.wid.org/aservo#hasName">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="https://www.wid.org/aservo#VolcanicEruption"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label>Name of the volcanic eruption</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://www.wid.org/aservo#hasNumberOfMen -->
+
+    <owl:DatatypeProperty rdf:about="https://www.wid.org/aservo#hasNumberOfMen">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="https://www.wid.org/aservo#AffectedPeople"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:label>Number of men afected by a volcanic eruption</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://www.wid.org/aservo#hasNumberOfWomen -->
+
+    <owl:DatatypeProperty rdf:about="https://www.wid.org/aservo#hasNumberOfWomen">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="https://www.wid.org/aservo#AffectedPeople"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:label>Number of men afected by a volcanic eruption</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://www.wid.org/aservo#hasPerimeter -->
+
+    <owl:DatatypeProperty rdf:about="https://www.wid.org/aservo#hasPerimeter">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="https://www.wid.org/aservo#LavaFlow"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+        <rdfs:label>Perimeter of a lava flow</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://www.wid.org/aservo#hasShapeArea -->
+
+    <owl:DatatypeProperty rdf:about="https://www.wid.org/aservo#hasShapeArea">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="https://www.wid.org/aservo#LavaFlow"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+        <rdfs:label>Shape Area of a lava flow</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://www.wid.org/aservo#hasShapeLength -->
+
+    <owl:DatatypeProperty rdf:about="https://www.wid.org/aservo#hasShapeLength">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="https://www.wid.org/aservo#LavaFlow"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+        <rdfs:label>Shape length of a lava flow</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://www.wid.org/aservo#hasStartDate -->
+
+    <owl:DatatypeProperty rdf:about="https://www.wid.org/aservo#hasStartDate">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="https://www.wid.org/aservo#VolcanicEruption"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">date the volcanic eruption occurred</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://www.wid.org/aservo#hasTime -->
+
+    <owl:DatatypeProperty rdf:about="https://www.wid.org/aservo#hasTime">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="https://saref.etsi.org/saref4envi/Measurement"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label>Measure of time</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://www.wid.org/aservo#hasVolcanicExplosivityIndex -->
+
+    <owl:DatatypeProperty rdf:about="https://www.wid.org/aservo#hasVolcanicExplosivityIndex">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="https://www.wid.org/aservo#VolcanicEruption"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:label>The Volcanic Explosivity Index of the volcan eruption</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://www.wid.org/aservo:aservo#hasLatitude -->
+
+    <owl:DatatypeProperty rdf:about="https://www.wid.org/aservo:aservo#hasLatitude">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="https://www.wid.org/aservo#PhisycalProperty"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+        <rdfs:label>The latitude of a seismic activity</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- urn:webprotege:ontology:6d655d97-618e-4cd2-840b-832a836ae541#hasUse -->
+
+    <owl:DatatypeProperty rdf:about="urn:webprotege:ontology:6d655d97-618e-4cd2-840b-832a836ae541#hasUse">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="https://www.wid.org/aservo#AffectedBuildings"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label>Use of an affected building</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- urn:webprotege:ontology:6d655d97-618e-4cd2-840b-832a836ae541#isMagnitudeType -->
+
+    <owl:DatatypeProperty rdf:about="urn:webprotege:ontology:6d655d97-618e-4cd2-840b-832a836ae541#isMagnitudeType">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="https://www.wid.org/aservo#SeismicActivity"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label>Type of magnitude measure on a seismic activity</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- https://saref.etsi.org/core/Device -->
+
+    <owl:Class rdf:about="https://saref.etsi.org/core/Device">
+        <rdfs:label rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">The device used to measure somenthing</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://saref.etsi.org/core/FeatureOfInterest -->
+
+    <owl:Class rdf:about="https://saref.etsi.org/core/FeatureOfInterest">
+        <rdfs:label rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Feature of interest</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://saref.etsi.org/core/Property -->
+
+    <owl:Class rdf:about="https://saref.etsi.org/core/Property">
+        <rdfs:label rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Property</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://saref.etsi.org/saref4envi/Measurement -->
+
+    <owl:Class rdf:about="https://saref.etsi.org/saref4envi/Measurement">
+        <rdfs:label rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Measurement</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://saref.etsi.org/saref4envi/SpatialObject -->
+
+    <owl:Class rdf:about="https://saref.etsi.org/saref4envi/SpatialObject">
+        <rdfs:label rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Spatial object</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://saref.etsi.org/saref4envi/SpatialThing -->
+
+    <owl:Class rdf:about="https://saref.etsi.org/saref4envi/SpatialThing">
+        <rdfs:subClassOf rdf:resource="https://saref.etsi.org/saref4envi/SpatialObject"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Spatial thing</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://www.wid.org/aservo#AffectedBuildings -->
+
+    <owl:Class rdf:about="https://www.wid.org/aservo#AffectedBuildings">
+        <rdfs:subClassOf rdf:resource="https://www.wid.org/aservo#PopulationRisks"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">The affected builidings</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://www.wid.org/aservo#AffectedPeople -->
+
+    <owl:Class rdf:about="https://www.wid.org/aservo#AffectedPeople">
+        <rdfs:subClassOf rdf:resource="https://www.wid.org/aservo#PopulationRisks"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">The affected people</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://www.wid.org/aservo#AirQuality -->
+
+    <owl:Class rdf:about="https://www.wid.org/aservo#AirQuality">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://saref.etsi.org/core/hasProperty"/>
+                <owl:someValuesFrom rdf:resource="https://www.wid.org/aservo:aservo#AirQualityProperties"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">The quality of the air in the area observed</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://www.wid.org/aservo#AirQualitySensor -->
+
+    <owl:Class rdf:about="https://www.wid.org/aservo#AirQualitySensor">
+        <rdfs:subClassOf rdf:resource="https://saref.etsi.org/core/Device"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Device to measure te air quality</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://www.wid.org/aservo#Hawaiian -->
+
+    <owl:Class rdf:about="https://www.wid.org/aservo#Hawaiian">
+        <rdfs:subClassOf rdf:resource="https://www.wid.org/aservo#VolcanicEruption"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Hawaiian type of volcanic eruption</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://www.wid.org/aservo#HawaiianStrombolian -->
+
+    <owl:Class rdf:about="https://www.wid.org/aservo#HawaiianStrombolian">
+        <rdfs:subClassOf rdf:resource="https://www.wid.org/aservo#VolcanicEruption"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Hawaiian strombolian  type of volcanic eruption</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://www.wid.org/aservo#LavaFlow -->
+
+    <owl:Class rdf:about="https://www.wid.org/aservo#LavaFlow">
+        <rdfs:subClassOf rdf:resource="https://www.wid.org/aservo#PhisycalProperty"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://saref.etsi.org/core/hasProperty"/>
+                <owl:someValuesFrom rdf:resource="https://saref.etsi.org/core/Property"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label>Lava flow from a volcanic eruption</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://www.wid.org/aservo#LavaFlowSensor -->
+
+    <owl:Class rdf:about="https://www.wid.org/aservo#LavaFlowSensor">
+        <rdfs:subClassOf rdf:resource="https://saref.etsi.org/core/Device"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Device to measure the lava flow parameters</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://www.wid.org/aservo#NO2Level -->
+
+    <owl:Class rdf:about="https://www.wid.org/aservo#NO2Level">
+        <rdfs:subClassOf rdf:resource="https://www.wid.org/aservo#AirQuality"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Nitrogen dioxide level in the air</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://www.wid.org/aservo#O3Level -->
+
+    <owl:Class rdf:about="https://www.wid.org/aservo#O3Level">
+        <rdfs:subClassOf rdf:resource="https://www.wid.org/aservo#AirQuality"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Ozone level in the air</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://www.wid.org/aservo#PeleanPlinian -->
+
+    <owl:Class rdf:about="https://www.wid.org/aservo#PeleanPlinian">
+        <rdfs:subClassOf rdf:resource="https://www.wid.org/aservo#VolcanicEruption"/>
+        <rdfs:label>Pelean Plinian  type of volcanic eruption</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://www.wid.org/aservo#PhisycalProperty -->
+
+    <owl:Class rdf:about="https://www.wid.org/aservo#PhisycalProperty">
+        <rdfs:subClassOf rdf:resource="https://saref.etsi.org/core/Property"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Physical properties</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://www.wid.org/aservo#Plinian -->
+
+    <owl:Class rdf:about="https://www.wid.org/aservo#Plinian">
+        <rdfs:subClassOf rdf:resource="https://www.wid.org/aservo#VolcanicEruption"/>
+        <rdfs:label>Plinian type of volcanic eruption</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://www.wid.org/aservo#PlinianaUltraplinian -->
+
+    <owl:Class rdf:about="https://www.wid.org/aservo#PlinianaUltraplinian">
+        <rdfs:subClassOf rdf:resource="https://www.wid.org/aservo#VolcanicEruption"/>
+        <rdfs:label>Plinian Ultraplinian  type of volcanic eruption</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://www.wid.org/aservo#PopulationRisks -->
+
+    <owl:Class rdf:about="https://www.wid.org/aservo#PopulationRisks">
+        <rdfs:label rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">The risks that may affect to the people population or its material assets</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://www.wid.org/aservo#SO2Level -->
+
+    <owl:Class rdf:about="https://www.wid.org/aservo#SO2Level">
+        <rdfs:subClassOf rdf:resource="https://www.wid.org/aservo#AirQuality"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Sulfur dioxide level in the air</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://www.wid.org/aservo#SeismicActivity -->
+
+    <owl:Class rdf:about="https://www.wid.org/aservo#SeismicActivity">
+        <rdfs:subClassOf rdf:resource="https://www.wid.org/aservo#PhisycalProperty"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Seismic activity properties</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://www.wid.org/aservo#SeismicActivitySensor -->
+
+    <owl:Class rdf:about="https://www.wid.org/aservo#SeismicActivitySensor">
+        <rdfs:subClassOf rdf:resource="https://saref.etsi.org/core/Device"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Device to measure the parameters of a seismic</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://www.wid.org/aservo#StrombolianVulcanian -->
+
+    <owl:Class rdf:about="https://www.wid.org/aservo#StrombolianVulcanian">
+        <rdfs:subClassOf rdf:resource="https://www.wid.org/aservo#VolcanicEruption"/>
+        <rdfs:label>Strombolian Vulcanian  type of volcanic eruption</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://www.wid.org/aservo#VolcanicEruption -->
+
+    <owl:Class rdf:about="https://www.wid.org/aservo#VolcanicEruption">
+        <rdfs:subClassOf rdf:resource="https://saref.etsi.org/core/FeatureOfInterest"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://saref.etsi.org/core/hasProperty"/>
+                <owl:someValuesFrom rdf:resource="https://saref.etsi.org/core/Property"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A volcanic eruption</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://www.wid.org/aservo#Vulcanian -->
+
+    <owl:Class rdf:about="https://www.wid.org/aservo#Vulcanian">
+        <rdfs:subClassOf rdf:resource="https://www.wid.org/aservo#VolcanicEruption"/>
+        <rdfs:label>Vulcanian  type of volcanic eruption</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://www.wid.org/aservo#VulcanianExplosivePelean -->
+
+    <owl:Class rdf:about="https://www.wid.org/aservo#VulcanianExplosivePelean">
+        <rdfs:subClassOf rdf:resource="https://www.wid.org/aservo#VolcanicEruption"/>
+        <rdfs:label>Vulcanian Explosive Pelean type of volcanic eruption</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://www.wid.org/aservo:aservo#AirQualityProperties -->
+
+    <owl:Class rdf:about="https://www.wid.org/aservo:aservo#AirQualityProperties">
+        <rdfs:subClassOf rdf:resource="https://saref.etsi.org/core/Property"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Air quality properties</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- https://www.wid.org/aservo#affectedpeople1 -->
+
+    <owl:NamedIndividual rdf:about="https://www.wid.org/aservo#affectedpeople1">
+        <rdf:type rdf:resource="https://www.wid.org/aservo#AffectedPeople"/>
+        <hasNumberOfMen rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">826</hasNumberOfMen>
+        <hasNumberOfWomen rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">844</hasNumberOfWomen>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.wid.org/aservo#affectedpeople2 -->
+
+    <owl:NamedIndividual rdf:about="https://www.wid.org/aservo#affectedpeople2">
+        <rdf:type rdf:resource="https://www.wid.org/aservo#AffectedPeople"/>
+        <hasNumberOfMen rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">198</hasNumberOfMen>
+        <hasNumberOfWomen rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">193</hasNumberOfWomen>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.wid.org/aservo#affectedpeople3 -->
+
+    <owl:NamedIndividual rdf:about="https://www.wid.org/aservo#affectedpeople3">
+        <rdf:type rdf:resource="https://www.wid.org/aservo#AffectedPeople"/>
+        <hasNumberOfMen rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">80</hasNumberOfMen>
+        <hasNumberOfWomen rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">76</hasNumberOfWomen>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.wid.org/aservo#airqualitysensor001 -->
+
+    <owl:NamedIndividual rdf:about="https://www.wid.org/aservo#airqualitysensor001">
+        <rdf:type rdf:resource="https://www.wid.org/aservo#AirQualitySensor"/>
+        <core:hasProperty rdf:resource="https://www.wid.org/aservo#no2level1"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.wid.org/aservo#lavaflow1 -->
+
+    <owl:NamedIndividual rdf:about="https://www.wid.org/aservo#lavaflow1">
+        <rdf:type rdf:resource="https://www.wid.org/aservo#LavaFlow"/>
+        <relatesToMeasurement rdf:resource="https://www.wid.org/aservo#lavaflow1"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.wid.org/aservo#lavaflowmeasurement1 -->
+
+    <owl:NamedIndividual rdf:about="https://www.wid.org/aservo#lavaflowmeasurement1">
+        <rdf:type rdf:resource="https://saref.etsi.org/saref4envi/Measurement"/>
+        <hasMeasurement rdf:resource="https://www.wid.org/aservo#lavaflow1"/>
+        <hasArea rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">11360258.6178296</hasArea>
+        <hasHectares rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1136.02586178296</hasHectares>
+        <hasPerimeter rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">55080.9270797893</hasPerimeter>
+        <hasShapeArea rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">14796038.3266602</hasShapeArea>
+        <hasShapeLength rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">62828.82241109</hasShapeLength>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.wid.org/aservo#lavaflowsensor1 -->
+
+    <owl:NamedIndividual rdf:about="https://www.wid.org/aservo#lavaflowsensor1">
+        <rdf:type rdf:resource="https://www.wid.org/aservo#LavaFlowSensor"/>
+        <core:hasProperty rdf:resource="https://www.wid.org/aservo#lavaflow1"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.wid.org/aservo#no2level1 -->
+
+    <owl:NamedIndividual rdf:about="https://www.wid.org/aservo#no2level1">
+        <rdf:type rdf:resource="https://www.wid.org/aservo#NO2Level"/>
+        <relatesToMeasurement rdf:resource="https://www.wid.org/aservo#no2level1measurement"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.wid.org/aservo#no2level10 -->
+
+    <owl:NamedIndividual rdf:about="https://www.wid.org/aservo#no2level10">
+        <rdf:type rdf:resource="https://www.wid.org/aservo#NO2Level"/>
+        <hasHourAverage rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">41.1</hasHourAverage>
+        <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2021-12-02T09:00:00+01:00</hasTime>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.wid.org/aservo#no2level11 -->
+
+    <owl:NamedIndividual rdf:about="https://www.wid.org/aservo#no2level11">
+        <rdf:type rdf:resource="https://www.wid.org/aservo#NO2Level"/>
+        <hasHourAverage rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">38.86</hasHourAverage>
+        <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2021-12-02T10:00:00+01:00</hasTime>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.wid.org/aservo#no2level12 -->
+
+    <owl:NamedIndividual rdf:about="https://www.wid.org/aservo#no2level12">
+        <rdf:type rdf:resource="https://www.wid.org/aservo#NO2Level"/>
+        <hasHourAverage rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">38.69</hasHourAverage>
+        <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2021-12-02T11:00:00+01:00</hasTime>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.wid.org/aservo#no2level13 -->
+
+    <owl:NamedIndividual rdf:about="https://www.wid.org/aservo#no2level13">
+        <rdf:type rdf:resource="https://www.wid.org/aservo#NO2Level"/>
+        <hasHourAverage rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">40.09</hasHourAverage>
+        <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2021-12-02T12:00:00+01:00</hasTime>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.wid.org/aservo#no2level14 -->
+
+    <owl:NamedIndividual rdf:about="https://www.wid.org/aservo#no2level14">
+        <rdf:type rdf:resource="https://www.wid.org/aservo#NO2Level"/>
+        <hasHourAverage rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">43.17</hasHourAverage>
+        <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2021-12-02T13:00:00+01:00</hasTime>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.wid.org/aservo#no2level15 -->
+
+    <owl:NamedIndividual rdf:about="https://www.wid.org/aservo#no2level15">
+        <rdf:type rdf:resource="https://www.wid.org/aservo#NO2Level"/>
+        <hasHourAverage rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">44.54</hasHourAverage>
+        <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2021-12-02T14:00:00+01:00</hasTime>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.wid.org/aservo#no2level16 -->
+
+    <owl:NamedIndividual rdf:about="https://www.wid.org/aservo#no2level16">
+        <rdf:type rdf:resource="https://www.wid.org/aservo#NO2Level"/>
+        <hasHourAverage rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">48.2</hasHourAverage>
+        <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2021-12-02T15:00:00+01:00</hasTime>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.wid.org/aservo#no2level17 -->
+
+    <owl:NamedIndividual rdf:about="https://www.wid.org/aservo#no2level17">
+        <rdf:type rdf:resource="https://www.wid.org/aservo#NO2Level"/>
+        <hasHourAverage rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">46.5</hasHourAverage>
+        <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2021-12-02T16:00:00+01:00</hasTime>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.wid.org/aservo#no2level18 -->
+
+    <owl:NamedIndividual rdf:about="https://www.wid.org/aservo#no2level18">
+        <rdf:type rdf:resource="https://www.wid.org/aservo#NO2Level"/>
+        <hasHourAverage rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">45.83</hasHourAverage>
+        <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2021-12-02T17:00:00+01:00</hasTime>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.wid.org/aservo#no2level19 -->
+
+    <owl:NamedIndividual rdf:about="https://www.wid.org/aservo#no2level19">
+        <rdf:type rdf:resource="https://www.wid.org/aservo#NO2Level"/>
+        <hasHourAverage rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">45.08</hasHourAverage>
+        <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2021-12-02T18:00:00+01:00</hasTime>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.wid.org/aservo#no2level1measurement -->
+
+    <owl:NamedIndividual rdf:about="https://www.wid.org/aservo#no2level1measurement">
+        <rdf:type rdf:resource="https://saref.etsi.org/saref4envi/Measurement"/>
+        <hasMeasurement rdf:resource="https://www.wid.org/aservo#no2level1"/>
+        <hasHourAverage rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">38.56</hasHourAverage>
+        <hasTime>2021-12-02T00:00:00+01:00</hasTime>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.wid.org/aservo#no2level2 -->
+
+    <owl:NamedIndividual rdf:about="https://www.wid.org/aservo#no2level2">
+        <rdf:type rdf:resource="https://www.wid.org/aservo#NO2Level"/>
+        <hasHourAverage rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">40.67</hasHourAverage>
+        <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2021-12-02T01:00:00+01:00</hasTime>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.wid.org/aservo#no2level20 -->
+
+    <owl:NamedIndividual rdf:about="https://www.wid.org/aservo#no2level20">
+        <rdf:type rdf:resource="https://www.wid.org/aservo#NO2Level"/>
+        <hasHourAverage rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">43.14</hasHourAverage>
+        <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2021-12-02T19:00:00+01:00</hasTime>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.wid.org/aservo#no2level21 -->
+
+    <owl:NamedIndividual rdf:about="https://www.wid.org/aservo#no2level21">
+        <rdf:type rdf:resource="https://www.wid.org/aservo#NO2Level"/>
+        <hasHourAverage rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">46.19</hasHourAverage>
+        <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2021-12-02T20:00:00+01:00</hasTime>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.wid.org/aservo#no2level22 -->
+
+    <owl:NamedIndividual rdf:about="https://www.wid.org/aservo#no2level22">
+        <rdf:type rdf:resource="https://www.wid.org/aservo#NO2Level"/>
+        <hasHourAverage rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">46.62</hasHourAverage>
+        <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2021-12-02T21:00:00+01:00</hasTime>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.wid.org/aservo#no2level23 -->
+
+    <owl:NamedIndividual rdf:about="https://www.wid.org/aservo#no2level23">
+        <rdf:type rdf:resource="https://www.wid.org/aservo#NO2Level"/>
+        <hasHourAverage rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">51.43</hasHourAverage>
+        <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2021-12-02T22:00:00+01:00</hasTime>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.wid.org/aservo#no2level24 -->
+
+    <owl:NamedIndividual rdf:about="https://www.wid.org/aservo#no2level24">
+        <rdf:type rdf:resource="https://www.wid.org/aservo#NO2Level"/>
+        <hasHourAverage rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">49.6</hasHourAverage>
+        <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2021-12-02T23:00:00+01:00</hasTime>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.wid.org/aservo#no2level25 -->
+
+    <owl:NamedIndividual rdf:about="https://www.wid.org/aservo#no2level25">
+        <rdf:type rdf:resource="https://www.wid.org/aservo#NO2Level"/>
+        <hasHourAverage rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">43.22</hasHourAverage>
+        <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2021-12-03T00:00:00+01:00</hasTime>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.wid.org/aservo#no2level26 -->
+
+    <owl:NamedIndividual rdf:about="https://www.wid.org/aservo#no2level26">
+        <rdf:type rdf:resource="https://www.wid.org/aservo#NO2Level"/>
+        <hasHourAverage rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">43.3</hasHourAverage>
+        <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2021-12-03T01:00:00+01:00</hasTime>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.wid.org/aservo#no2level27 -->
+
+    <owl:NamedIndividual rdf:about="https://www.wid.org/aservo#no2level27">
+        <rdf:type rdf:resource="https://www.wid.org/aservo#NO2Level"/>
+        <hasHourAverage rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">43.58</hasHourAverage>
+        <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2021-12-03T02:00:00+01:00</hasTime>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.wid.org/aservo#no2level28 -->
+
+    <owl:NamedIndividual rdf:about="https://www.wid.org/aservo#no2level28">
+        <rdf:type rdf:resource="https://www.wid.org/aservo#NO2Level"/>
+        <hasHourAverage rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">43.93</hasHourAverage>
+        <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2021-12-03T03:00:00+01:00</hasTime>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.wid.org/aservo#no2level29 -->
+
+    <owl:NamedIndividual rdf:about="https://www.wid.org/aservo#no2level29">
+        <rdf:type rdf:resource="https://www.wid.org/aservo#NO2Level"/>
+        <hasHourAverage rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">46.25</hasHourAverage>
+        <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2021-12-03T04:00:00+01:00</hasTime>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.wid.org/aservo#no2level3 -->
+
+    <owl:NamedIndividual rdf:about="https://www.wid.org/aservo#no2level3">
+        <rdf:type rdf:resource="https://www.wid.org/aservo#NO2Level"/>
+        <hasHourAverage rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">42.99</hasHourAverage>
+        <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2021-12-02T02:00:00+01:00</hasTime>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.wid.org/aservo#no2level30 -->
+
+    <owl:NamedIndividual rdf:about="https://www.wid.org/aservo#no2level30">
+        <rdf:type rdf:resource="https://www.wid.org/aservo#NO2Level"/>
+        <hasHourAverage rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">43.18</hasHourAverage>
+        <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2021-12-03T05:00:00+01:00</hasTime>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.wid.org/aservo#no2level31 -->
+
+    <owl:NamedIndividual rdf:about="https://www.wid.org/aservo#no2level31">
+        <rdf:type rdf:resource="https://www.wid.org/aservo#NO2Level"/>
+        <hasHourAverage rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">41.55</hasHourAverage>
+        <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2021-12-03T06:00:00+01:00</hasTime>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.wid.org/aservo#no2level32 -->
+
+    <owl:NamedIndividual rdf:about="https://www.wid.org/aservo#no2level32">
+        <rdf:type rdf:resource="https://www.wid.org/aservo#NO2Level"/>
+        <hasHourAverage rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">45.28</hasHourAverage>
+        <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2021-12-03T07:00:00+01:00</hasTime>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.wid.org/aservo#no2level33 -->
+
+    <owl:NamedIndividual rdf:about="https://www.wid.org/aservo#no2level33">
+        <rdf:type rdf:resource="https://www.wid.org/aservo#NO2Level"/>
+        <hasHourAverage rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">42.35</hasHourAverage>
+        <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2021-12-03T08:00:00+01:00</hasTime>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.wid.org/aservo#no2level34 -->
+
+    <owl:NamedIndividual rdf:about="https://www.wid.org/aservo#no2level34">
+        <rdf:type rdf:resource="https://www.wid.org/aservo#NO2Level"/>
+        <hasHourAverage rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">41.01</hasHourAverage>
+        <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2021-12-03T09:00:00+01:00</hasTime>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.wid.org/aservo#no2level35 -->
+
+    <owl:NamedIndividual rdf:about="https://www.wid.org/aservo#no2level35">
+        <rdf:type rdf:resource="https://www.wid.org/aservo#NO2Level"/>
+        <hasHourAverage rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">45.35</hasHourAverage>
+        <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2021-12-03T10:00:00+01:00</hasTime>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.wid.org/aservo#no2level36 -->
+
+    <owl:NamedIndividual rdf:about="https://www.wid.org/aservo#no2level36">
+        <rdf:type rdf:resource="https://www.wid.org/aservo#NO2Level"/>
+        <hasHourAverage rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">39.96</hasHourAverage>
+        <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2021-12-03T11:00:00+01:00</hasTime>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.wid.org/aservo#no2level37 -->
+
+    <owl:NamedIndividual rdf:about="https://www.wid.org/aservo#no2level37">
+        <rdf:type rdf:resource="https://www.wid.org/aservo#NO2Level"/>
+        <hasHourAverage rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">39.56</hasHourAverage>
+        <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2021-12-03T12:00:00+01:00</hasTime>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.wid.org/aservo#no2level38 -->
+
+    <owl:NamedIndividual rdf:about="https://www.wid.org/aservo#no2level38">
+        <rdf:type rdf:resource="https://www.wid.org/aservo#NO2Level"/>
+        <hasHourAverage rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">42.69</hasHourAverage>
+        <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2021-12-03T13:00:00+01:00</hasTime>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.wid.org/aservo#no2level39 -->
+
+    <owl:NamedIndividual rdf:about="https://www.wid.org/aservo#no2level39">
+        <rdf:type rdf:resource="https://www.wid.org/aservo#NO2Level"/>
+        <hasHourAverage rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">43.7</hasHourAverage>
+        <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2021-12-03T14:00:00+01:00</hasTime>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.wid.org/aservo#no2level4 -->
+
+    <owl:NamedIndividual rdf:about="https://www.wid.org/aservo#no2level4">
+        <rdf:type rdf:resource="https://www.wid.org/aservo#NO2Level"/>
+        <hasHourAverage rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">46.97</hasHourAverage>
+        <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2021-12-02T03:00:00+01:00</hasTime>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.wid.org/aservo#no2level40 -->
+
+    <owl:NamedIndividual rdf:about="https://www.wid.org/aservo#no2level40">
+        <rdf:type rdf:resource="https://www.wid.org/aservo#NO2Level"/>
+        <hasHourAverage rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">46.57</hasHourAverage>
+        <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2021-12-03T15:00:00+01:00</hasTime>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.wid.org/aservo#no2level41 -->
+
+    <owl:NamedIndividual rdf:about="https://www.wid.org/aservo#no2level41">
+        <rdf:type rdf:resource="https://www.wid.org/aservo#NO2Level"/>
+        <hasHourAverage rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">47.1</hasHourAverage>
+        <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2021-12-03T16:00:00+01:00</hasTime>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.wid.org/aservo#no2level42 -->
+
+    <owl:NamedIndividual rdf:about="https://www.wid.org/aservo#no2level42">
+        <rdf:type rdf:resource="https://www.wid.org/aservo#NO2Level"/>
+        <hasHourAverage rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">45.48</hasHourAverage>
+        <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2021-12-03T17:00:00+01:00</hasTime>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.wid.org/aservo#no2level43 -->
+
+    <owl:NamedIndividual rdf:about="https://www.wid.org/aservo#no2level43">
+        <rdf:type rdf:resource="https://www.wid.org/aservo#NO2Level"/>
+        <hasHourAverage rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">42.2</hasHourAverage>
+        <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2021-12-03T18:00:00+01:00</hasTime>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.wid.org/aservo#no2level44 -->
+
+    <owl:NamedIndividual rdf:about="https://www.wid.org/aservo#no2level44">
+        <rdf:type rdf:resource="https://www.wid.org/aservo#NO2Level"/>
+        <hasHourAverage rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">47.8</hasHourAverage>
+        <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2021-12-03T19:00:00+01:00</hasTime>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.wid.org/aservo#no2level45 -->
+
+    <owl:NamedIndividual rdf:about="https://www.wid.org/aservo#no2level45">
+        <rdf:type rdf:resource="https://www.wid.org/aservo#NO2Level"/>
+        <hasHourAverage rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">50.34</hasHourAverage>
+        <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2021-12-03T20:00:00+01:00</hasTime>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.wid.org/aservo#no2level46 -->
+
+    <owl:NamedIndividual rdf:about="https://www.wid.org/aservo#no2level46">
+        <rdf:type rdf:resource="https://www.wid.org/aservo#NO2Level"/>
+        <hasHourAverage rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">49.03</hasHourAverage>
+        <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2021-12-03T21:00:00+01:00</hasTime>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.wid.org/aservo#no2level47 -->
+
+    <owl:NamedIndividual rdf:about="https://www.wid.org/aservo#no2level47">
+        <rdf:type rdf:resource="https://www.wid.org/aservo#NO2Level"/>
+        <hasHourAverage rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">42.78</hasHourAverage>
+        <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2021-12-03T22:00:00+01:00</hasTime>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.wid.org/aservo#no2level48 -->
+
+    <owl:NamedIndividual rdf:about="https://www.wid.org/aservo#no2level48">
+        <rdf:type rdf:resource="https://www.wid.org/aservo#NO2Level"/>
+        <hasHourAverage rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">43.87</hasHourAverage>
+        <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2021-12-03T23:00:00+01:00</hasTime>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.wid.org/aservo#no2level5 -->
+
+    <owl:NamedIndividual rdf:about="https://www.wid.org/aservo#no2level5">
+        <rdf:type rdf:resource="https://www.wid.org/aservo#NO2Level"/>
+        <hasHourAverage rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">44.95</hasHourAverage>
+        <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2021-12-02T04:00:00+01:00</hasTime>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.wid.org/aservo#no2level6 -->
+
+    <owl:NamedIndividual rdf:about="https://www.wid.org/aservo#no2level6">
+        <rdf:type rdf:resource="https://www.wid.org/aservo#NO2Level"/>
+        <hasHourAverage rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">46.25</hasHourAverage>
+        <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2021-12-02T05:00:00+01:00</hasTime>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.wid.org/aservo#no2level7 -->
+
+    <owl:NamedIndividual rdf:about="https://www.wid.org/aservo#no2level7">
+        <rdf:type rdf:resource="https://www.wid.org/aservo#NO2Level"/>
+        <hasHourAverage rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">45.36</hasHourAverage>
+        <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2021-12-02T06:00:00+01:00</hasTime>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.wid.org/aservo#no2level8 -->
+
+    <owl:NamedIndividual rdf:about="https://www.wid.org/aservo#no2level8">
+        <rdf:type rdf:resource="https://www.wid.org/aservo#NO2Level"/>
+        <hasHourAverage rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">46.51</hasHourAverage>
+        <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2021-12-02T07:00:00+01:00</hasTime>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.wid.org/aservo#no2level9 -->
+
+    <owl:NamedIndividual rdf:about="https://www.wid.org/aservo#no2level9">
+        <rdf:type rdf:resource="https://www.wid.org/aservo#NO2Level"/>
+        <hasHourAverage rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">47.3</hasHourAverage>
+        <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2021-12-02T08:00:00+01:00</hasTime>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.wid.org/aservo#o3level1 -->
+
+    <owl:NamedIndividual rdf:about="https://www.wid.org/aservo#o3level1">
+        <rdf:type rdf:resource="https://www.wid.org/aservo#O3Level"/>
+        <hasHourAverage rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">26.85</hasHourAverage>
+        <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2021-12-02T12:00:00+01:00</hasTime>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.wid.org/aservo#o3level10 -->
+
+    <owl:NamedIndividual rdf:about="https://www.wid.org/aservo#o3level10">
+        <rdf:type rdf:resource="https://www.wid.org/aservo#O3Level"/>
+        <hasHourAverage rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">47.56</hasHourAverage>
+        <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2021-12-02T21:00:00+01:00</hasTime>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.wid.org/aservo#o3level11 -->
+
+    <owl:NamedIndividual rdf:about="https://www.wid.org/aservo#o3level11">
+        <rdf:type rdf:resource="https://www.wid.org/aservo#O3Level"/>
+        <hasHourAverage rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">51.32</hasHourAverage>
+        <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2021-12-02T22:00:00+01:00</hasTime>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.wid.org/aservo#o3level12 -->
+
+    <owl:NamedIndividual rdf:about="https://www.wid.org/aservo#o3level12">
+        <rdf:type rdf:resource="https://www.wid.org/aservo#O3Level"/>
+        <hasHourAverage rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">45.52</hasHourAverage>
+        <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2021-12-02T23:00:00+01:00</hasTime>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.wid.org/aservo#o3level13 -->
+
+    <owl:NamedIndividual rdf:about="https://www.wid.org/aservo#o3level13">
+        <rdf:type rdf:resource="https://www.wid.org/aservo#O3Level"/>
+        <hasHourAverage rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">42.93</hasHourAverage>
+        <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2021-12-03T00:00:00+01:00</hasTime>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.wid.org/aservo#o3level14 -->
+
+    <owl:NamedIndividual rdf:about="https://www.wid.org/aservo#o3level14">
+        <rdf:type rdf:resource="https://www.wid.org/aservo#O3Level"/>
+        <hasHourAverage rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">48.84</hasHourAverage>
+        <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2021-12-03T01:00:00+01:00</hasTime>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.wid.org/aservo#o3level15 -->
+
+    <owl:NamedIndividual rdf:about="https://www.wid.org/aservo#o3level15">
+        <rdf:type rdf:resource="https://www.wid.org/aservo#O3Level"/>
+        <hasHourAverage rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">51.42</hasHourAverage>
+        <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2021-12-03T02:00:00+01:00</hasTime>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.wid.org/aservo#o3level16 -->
+
+    <owl:NamedIndividual rdf:about="https://www.wid.org/aservo#o3level16">
+        <rdf:type rdf:resource="https://www.wid.org/aservo#O3Level"/>
+        <hasHourAverage rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">44.55</hasHourAverage>
+        <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2021-12-03T03:00:00+01:00</hasTime>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.wid.org/aservo#o3level17 -->
+
+    <owl:NamedIndividual rdf:about="https://www.wid.org/aservo#o3level17">
+        <rdf:type rdf:resource="https://www.wid.org/aservo#O3Level"/>
+        <hasHourAverage rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">46.44</hasHourAverage>
+        <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2021-12-03T04:00:00+01:00</hasTime>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.wid.org/aservo#o3level18 -->
+
+    <owl:NamedIndividual rdf:about="https://www.wid.org/aservo#o3level18">
+        <rdf:type rdf:resource="https://www.wid.org/aservo#O3Level"/>
+        <hasHourAverage rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">46.07</hasHourAverage>
+        <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2021-12-03T05:00:00+01:00</hasTime>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.wid.org/aservo#o3level19 -->
+
+    <owl:NamedIndividual rdf:about="https://www.wid.org/aservo#o3level19">
+        <rdf:type rdf:resource="https://www.wid.org/aservo#O3Level"/>
+        <hasHourAverage rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">47.48</hasHourAverage>
+        <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2021-12-03T06:00:00+01:00</hasTime>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.wid.org/aservo#o3level2 -->
+
+    <owl:NamedIndividual rdf:about="https://www.wid.org/aservo#o3level2">
+        <rdf:type rdf:resource="https://www.wid.org/aservo#O3Level"/>
+        <hasHourAverage rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">27.72</hasHourAverage>
+        <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2021-12-02T13:00:00+01:00</hasTime>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.wid.org/aservo#o3level20 -->
+
+    <owl:NamedIndividual rdf:about="https://www.wid.org/aservo#o3level20">
+        <rdf:type rdf:resource="https://www.wid.org/aservo#O3Level"/>
+        <hasHourAverage rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">49.39</hasHourAverage>
+        <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2021-12-03T07:00:00+01:00</hasTime>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.wid.org/aservo#o3level21 -->
+
+    <owl:NamedIndividual rdf:about="https://www.wid.org/aservo#o3level21">
+        <rdf:type rdf:resource="https://www.wid.org/aservo#O3Level"/>
+        <hasHourAverage rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">42.49</hasHourAverage>
+        <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2021-12-03T08:00:00+01:00</hasTime>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.wid.org/aservo#o3level22 -->
+
+    <owl:NamedIndividual rdf:about="https://www.wid.org/aservo#o3level22">
+        <rdf:type rdf:resource="https://www.wid.org/aservo#O3Level"/>
+        <hasHourAverage rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">47.15</hasHourAverage>
+        <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2021-12-03T09:00:00+01:00</hasTime>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.wid.org/aservo#o3level23 -->
+
+    <owl:NamedIndividual rdf:about="https://www.wid.org/aservo#o3level23">
+        <rdf:type rdf:resource="https://www.wid.org/aservo#O3Level"/>
+        <hasHourAverage rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">37.0</hasHourAverage>
+        <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2021-12-03T10:00:00+01:00</hasTime>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.wid.org/aservo#o3level24 -->
+
+    <owl:NamedIndividual rdf:about="https://www.wid.org/aservo#o3level24">
+        <rdf:type rdf:resource="https://www.wid.org/aservo#O3Level"/>
+        <hasHourAverage rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">14.69</hasHourAverage>
+        <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2021-12-03T11:00:00+01:00</hasTime>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.wid.org/aservo#o3level25 -->
+
+    <owl:NamedIndividual rdf:about="https://www.wid.org/aservo#o3level25">
+        <rdf:type rdf:resource="https://www.wid.org/aservo#O3Level"/>
+        <hasHourAverage rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">17.02</hasHourAverage>
+        <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2021-12-03T12:00:00+01:00</hasTime>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.wid.org/aservo#o3level26 -->
+
+    <owl:NamedIndividual rdf:about="https://www.wid.org/aservo#o3level26">
+        <rdf:type rdf:resource="https://www.wid.org/aservo#O3Level"/>
+        <hasHourAverage rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">20.44</hasHourAverage>
+        <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2021-12-03T13:00:00+01:00</hasTime>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.wid.org/aservo#o3level27 -->
+
+    <owl:NamedIndividual rdf:about="https://www.wid.org/aservo#o3level27">
+        <rdf:type rdf:resource="https://www.wid.org/aservo#O3Level"/>
+        <hasHourAverage rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">31.76</hasHourAverage>
+        <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2021-12-03T14:00:00+01:00</hasTime>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.wid.org/aservo#o3level28 -->
+
+    <owl:NamedIndividual rdf:about="https://www.wid.org/aservo#o3level28">
+        <rdf:type rdf:resource="https://www.wid.org/aservo#O3Level"/>
+        <hasHourAverage rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">32.37</hasHourAverage>
+        <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2021-12-03T15:00:00+01:00</hasTime>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.wid.org/aservo#o3level29 -->
+
+    <owl:NamedIndividual rdf:about="https://www.wid.org/aservo#o3level29">
+        <rdf:type rdf:resource="https://www.wid.org/aservo#O3Level"/>
+        <hasHourAverage rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">19.21</hasHourAverage>
+        <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2021-12-03T16:00:00+01:00</hasTime>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.wid.org/aservo#o3level3 -->
+
+    <owl:NamedIndividual rdf:about="https://www.wid.org/aservo#o3level3">
+        <rdf:type rdf:resource="https://www.wid.org/aservo#O3Level"/>
+        <hasHourAverage rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">23.74</hasHourAverage>
+        <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2021-12-02T14:00:00+01:00</hasTime>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.wid.org/aservo#o3level30 -->
+
+    <owl:NamedIndividual rdf:about="https://www.wid.org/aservo#o3level30">
+        <rdf:type rdf:resource="https://www.wid.org/aservo#O3Level"/>
+        <hasHourAverage rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">15.08</hasHourAverage>
+        <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2021-12-03T17:00:00+01:00</hasTime>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.wid.org/aservo#o3level31 -->
+
+    <owl:NamedIndividual rdf:about="https://www.wid.org/aservo#o3level31">
+        <rdf:type rdf:resource="https://www.wid.org/aservo#O3Level"/>
+        <hasHourAverage rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">27.82</hasHourAverage>
+        <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2021-12-03T18:00:00+01:00</hasTime>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.wid.org/aservo#o3level32 -->
+
+    <owl:NamedIndividual rdf:about="https://www.wid.org/aservo#o3level32">
+        <rdf:type rdf:resource="https://www.wid.org/aservo#O3Level"/>
+        <hasHourAverage rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">52.43</hasHourAverage>
+        <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2021-12-03T19:00:00+01:00</hasTime>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.wid.org/aservo#o3level33 -->
+
+    <owl:NamedIndividual rdf:about="https://www.wid.org/aservo#o3level33">
+        <rdf:type rdf:resource="https://www.wid.org/aservo#O3Level"/>
+        <hasHourAverage rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">55.5</hasHourAverage>
+        <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2021-12-03T20:00:00+01:00</hasTime>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.wid.org/aservo#o3level34 -->
+
+    <owl:NamedIndividual rdf:about="https://www.wid.org/aservo#o3level34">
+        <rdf:type rdf:resource="https://www.wid.org/aservo#O3Level"/>
+        <hasHourAverage rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">50.69</hasHourAverage>
+        <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2021-12-03T21:00:00+01:00</hasTime>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.wid.org/aservo#o3level35 -->
+
+    <owl:NamedIndividual rdf:about="https://www.wid.org/aservo#o3level35">
+        <rdf:type rdf:resource="https://www.wid.org/aservo#O3Level"/>
+        <hasHourAverage rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">46.65</hasHourAverage>
+        <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2021-12-03T22:00:00+01:00</hasTime>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.wid.org/aservo#o3level36 -->
+
+    <owl:NamedIndividual rdf:about="https://www.wid.org/aservo#o3level36">
+        <rdf:type rdf:resource="https://www.wid.org/aservo#O3Level"/>
+        <hasHourAverage rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">49.95</hasHourAverage>
+        <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2021-12-03T23:00:00+01:00</hasTime>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.wid.org/aservo#o3level37 -->
+
+    <owl:NamedIndividual rdf:about="https://www.wid.org/aservo#o3level37">
+        <rdf:type rdf:resource="https://www.wid.org/aservo#O3Level"/>
+        <hasHourAverage rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">36.99</hasHourAverage>
+        <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2021-12-04T00:00:00+01:00</hasTime>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.wid.org/aservo#o3level38 -->
+
+    <owl:NamedIndividual rdf:about="https://www.wid.org/aservo#o3level38">
+        <rdf:type rdf:resource="https://www.wid.org/aservo#O3Level"/>
+        <hasHourAverage rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">36.29</hasHourAverage>
+        <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2021-12-04T01:00:00+01:00</hasTime>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.wid.org/aservo#o3level39 -->
+
+    <owl:NamedIndividual rdf:about="https://www.wid.org/aservo#o3level39">
+        <rdf:type rdf:resource="https://www.wid.org/aservo#O3Level"/>
+        <hasHourAverage rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">27.24</hasHourAverage>
+        <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2021-12-04T02:00:00+01:00</hasTime>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.wid.org/aservo#o3level4 -->
+
+    <owl:NamedIndividual rdf:about="https://www.wid.org/aservo#o3level4">
+        <rdf:type rdf:resource="https://www.wid.org/aservo#O3Level"/>
+        <hasHourAverage rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">45.02</hasHourAverage>
+        <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2021-12-02T15:00:00+01:00</hasTime>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.wid.org/aservo#o3level40 -->
+
+    <owl:NamedIndividual rdf:about="https://www.wid.org/aservo#o3level40">
+        <rdf:type rdf:resource="https://www.wid.org/aservo#O3Level"/>
+        <hasHourAverage rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">8.29</hasHourAverage>
+        <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2021-12-04T03:00:00+01:00</hasTime>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.wid.org/aservo#o3level41 -->
+
+    <owl:NamedIndividual rdf:about="https://www.wid.org/aservo#o3level41">
+        <rdf:type rdf:resource="https://www.wid.org/aservo#O3Level"/>
+        <hasHourAverage rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">10.98</hasHourAverage>
+        <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2021-12-04T04:00:00+01:00</hasTime>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.wid.org/aservo#o3level42 -->
+
+    <owl:NamedIndividual rdf:about="https://www.wid.org/aservo#o3level42">
+        <rdf:type rdf:resource="https://www.wid.org/aservo#O3Level"/>
+        <hasHourAverage rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">31.01</hasHourAverage>
+        <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2021-12-04T05:00:00+01:00</hasTime>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.wid.org/aservo#o3level43 -->
+
+    <owl:NamedIndividual rdf:about="https://www.wid.org/aservo#o3level43">
+        <rdf:type rdf:resource="https://www.wid.org/aservo#O3Level"/>
+        <hasHourAverage rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">31.9</hasHourAverage>
+        <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2021-12-04T06:00:00+01:00</hasTime>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.wid.org/aservo#o3level44 -->
+
+    <owl:NamedIndividual rdf:about="https://www.wid.org/aservo#o3level44">
+        <rdf:type rdf:resource="https://www.wid.org/aservo#O3Level"/>
+        <hasHourAverage rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">46.63</hasHourAverage>
+        <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2021-12-04T07:00:00+01:00</hasTime>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.wid.org/aservo#o3level45 -->
+
+    <owl:NamedIndividual rdf:about="https://www.wid.org/aservo#o3level45">
+        <rdf:type rdf:resource="https://www.wid.org/aservo#O3Level"/>
+        <hasHourAverage rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">54.05</hasHourAverage>
+        <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2021-12-04T08:00:00+01:00</hasTime>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.wid.org/aservo#o3level46 -->
+
+    <owl:NamedIndividual rdf:about="https://www.wid.org/aservo#o3level46">
+        <rdf:type rdf:resource="https://www.wid.org/aservo#O3Level"/>
+        <hasHourAverage rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">53.76</hasHourAverage>
+        <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2021-12-04T09:00:00+01:00</hasTime>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.wid.org/aservo#o3level47 -->
+
+    <owl:NamedIndividual rdf:about="https://www.wid.org/aservo#o3level47">
+        <rdf:type rdf:resource="https://www.wid.org/aservo#O3Level"/>
+        <hasHourAverage rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">53.19</hasHourAverage>
+        <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2021-12-04T10:00:00+01:00</hasTime>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.wid.org/aservo#o3level48 -->
+
+    <owl:NamedIndividual rdf:about="https://www.wid.org/aservo#o3level48">
+        <rdf:type rdf:resource="https://www.wid.org/aservo#O3Level"/>
+        <hasHourAverage rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">49.33</hasHourAverage>
+        <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2021-12-04T11:00:00+01:00</hasTime>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.wid.org/aservo#o3level5 -->
+
+    <owl:NamedIndividual rdf:about="https://www.wid.org/aservo#o3level5">
+        <rdf:type rdf:resource="https://www.wid.org/aservo#O3Level"/>
+        <hasHourAverage rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">39.75</hasHourAverage>
+        <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2021-12-02T16:00:00+01:00</hasTime>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.wid.org/aservo#o3level6 -->
+
+    <owl:NamedIndividual rdf:about="https://www.wid.org/aservo#o3level6">
+        <rdf:type rdf:resource="https://www.wid.org/aservo#O3Level"/>
+        <hasHourAverage rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">41.99</hasHourAverage>
+        <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2021-12-02T17:00:00+01:00</hasTime>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.wid.org/aservo#o3level7 -->
+
+    <owl:NamedIndividual rdf:about="https://www.wid.org/aservo#o3level7">
+        <rdf:type rdf:resource="https://www.wid.org/aservo#O3Level"/>
+        <hasHourAverage rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">40.17</hasHourAverage>
+        <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2021-12-02T18:00:00+01:00</hasTime>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.wid.org/aservo#o3level8 -->
+
+    <owl:NamedIndividual rdf:about="https://www.wid.org/aservo#o3level8">
+        <rdf:type rdf:resource="https://www.wid.org/aservo#O3Level"/>
+        <hasHourAverage rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">50.53</hasHourAverage>
+        <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2021-12-02T19:00:00+01:00</hasTime>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.wid.org/aservo#o3level9 -->
+
+    <owl:NamedIndividual rdf:about="https://www.wid.org/aservo#o3level9">
+        <rdf:type rdf:resource="https://www.wid.org/aservo#O3Level"/>
+        <hasHourAverage rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">51.75</hasHourAverage>
+        <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2021-12-02T20:00:00+01:00</hasTime>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.wid.org/aservo#seismicactivity1 -->
+
+    <owl:NamedIndividual rdf:about="https://www.wid.org/aservo#seismicactivity1">
+        <rdf:type rdf:resource="https://www.wid.org/aservo#SeismicActivity"/>
+        <relatesToMeasurement rdf:resource="https://www.wid.org/aservo#seismicactivitymeasurement1"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.wid.org/aservo#seismicactivitymeasurement1 -->
+
+    <owl:NamedIndividual rdf:about="https://www.wid.org/aservo#seismicactivitymeasurement1">
+        <rdf:type rdf:resource="https://saref.etsi.org/saref4envi/Measurement"/>
+        <hasMeasurement rdf:resource="https://www.wid.org/aservo#seismicactivity1"/>
+        <wgs8:lat rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">28.570</wgs8:lat>
+        <wgs8:lon rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">-17.868</wgs8:lon>
+        <hasDepth rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">6.1</hasDepth>
+        <hasIntensity rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</hasIntensity>
+        <urn:isMagnitudeType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">mbLg</urn:isMagnitudeType>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.wid.org/aservo#seismicactivitysensor1 -->
+
+    <owl:NamedIndividual rdf:about="https://www.wid.org/aservo#seismicactivitysensor1">
+        <rdf:type rdf:resource="https://www.wid.org/aservo#SeismicActivitySensor"/>
+        <core:hasProperty rdf:resource="https://www.wid.org/aservo#seismicactivity1"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.wid.org/aservo#so2level1 -->
+
+    <owl:NamedIndividual rdf:about="https://www.wid.org/aservo#so2level1">
+        <rdf:type rdf:resource="https://www.wid.org/aservo#SO2Level"/>
+        <hasHourAverage rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1.0</hasHourAverage>
+        <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2021-12-02T12:00:00+01:00</hasTime>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.wid.org/aservo#so2level10 -->
+
+    <owl:NamedIndividual rdf:about="https://www.wid.org/aservo#so2level10">
+        <rdf:type rdf:resource="https://www.wid.org/aservo#SO2Level"/>
+        <hasHourAverage rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1.0</hasHourAverage>
+        <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2021-12-02T21:00:00+01:00</hasTime>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.wid.org/aservo#so2level11 -->
+
+    <owl:NamedIndividual rdf:about="https://www.wid.org/aservo#so2level11">
+        <rdf:type rdf:resource="https://www.wid.org/aservo#SO2Level"/>
+        <hasHourAverage rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1.0</hasHourAverage>
+        <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2021-12-02T22:00:00+01:00</hasTime>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.wid.org/aservo#so2level12 -->
+
+    <owl:NamedIndividual rdf:about="https://www.wid.org/aservo#so2level12">
+        <rdf:type rdf:resource="https://www.wid.org/aservo#SO2Level"/>
+        <hasHourAverage rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1.0</hasHourAverage>
+        <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2021-12-02T23:00:00+01:00</hasTime>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.wid.org/aservo#so2level13 -->
+
+    <owl:NamedIndividual rdf:about="https://www.wid.org/aservo#so2level13">
+        <rdf:type rdf:resource="https://www.wid.org/aservo#SO2Level"/>
+        <hasHourAverage rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1.46</hasHourAverage>
+        <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2021-12-03T00:00:00+01:00</hasTime>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.wid.org/aservo#so2level14 -->
+
+    <owl:NamedIndividual rdf:about="https://www.wid.org/aservo#so2level14">
+        <rdf:type rdf:resource="https://www.wid.org/aservo#SO2Level"/>
+        <hasHourAverage rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">2.67</hasHourAverage>
+        <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2021-12-03T01:00:00+01:00</hasTime>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.wid.org/aservo#so2level15 -->
+
+    <owl:NamedIndividual rdf:about="https://www.wid.org/aservo#so2level15">
+        <rdf:type rdf:resource="https://www.wid.org/aservo#SO2Level"/>
+        <hasHourAverage rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1.04</hasHourAverage>
+        <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2021-12-03T02:00:00+01:00</hasTime>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.wid.org/aservo#so2level16 -->
+
+    <owl:NamedIndividual rdf:about="https://www.wid.org/aservo#so2level16">
+        <rdf:type rdf:resource="https://www.wid.org/aservo#SO2Level"/>
+        <hasHourAverage rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">25.54</hasHourAverage>
+        <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2021-12-03T03:00:00+01:00</hasTime>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.wid.org/aservo#so2level17 -->
+
+    <owl:NamedIndividual rdf:about="https://www.wid.org/aservo#so2level17">
+        <rdf:type rdf:resource="https://www.wid.org/aservo#SO2Level"/>
+        <hasHourAverage rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1.0</hasHourAverage>
+        <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2021-12-03T04:00:00+01:00</hasTime>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.wid.org/aservo#so2level18 -->
+
+    <owl:NamedIndividual rdf:about="https://www.wid.org/aservo#so2level18">
+        <rdf:type rdf:resource="https://www.wid.org/aservo#SO2Level"/>
+        <hasHourAverage rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1.0</hasHourAverage>
+        <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2021-12-03T05:00:00+01:00</hasTime>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.wid.org/aservo#so2level19 -->
+
+    <owl:NamedIndividual rdf:about="https://www.wid.org/aservo#so2level19">
+        <rdf:type rdf:resource="https://www.wid.org/aservo#SO2Level"/>
+        <hasHourAverage rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1.0</hasHourAverage>
+        <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2021-12-03T06:00:00+01:00</hasTime>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.wid.org/aservo#so2level2 -->
+
+    <owl:NamedIndividual rdf:about="https://www.wid.org/aservo#so2level2">
+        <rdf:type rdf:resource="https://www.wid.org/aservo#SO2Level"/>
+        <hasHourAverage rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1.39</hasHourAverage>
+        <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2021-12-02T13:00:00+01:00</hasTime>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.wid.org/aservo#so2level20 -->
+
+    <owl:NamedIndividual rdf:about="https://www.wid.org/aservo#so2level20">
+        <rdf:type rdf:resource="https://www.wid.org/aservo#SO2Level"/>
+        <hasHourAverage rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1.0</hasHourAverage>
+        <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2021-12-03T07:00:00+01:00</hasTime>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.wid.org/aservo#so2level21 -->
+
+    <owl:NamedIndividual rdf:about="https://www.wid.org/aservo#so2level21">
+        <rdf:type rdf:resource="https://www.wid.org/aservo#SO2Level"/>
+        <hasHourAverage rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1.0</hasHourAverage>
+        <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2021-12-03T08:00:00+01:00</hasTime>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.wid.org/aservo#so2level22 -->
+
+    <owl:NamedIndividual rdf:about="https://www.wid.org/aservo#so2level22">
+        <rdf:type rdf:resource="https://www.wid.org/aservo#SO2Level"/>
+        <hasHourAverage rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1.0</hasHourAverage>
+        <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2021-12-03T09:00:00+01:00</hasTime>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.wid.org/aservo#so2level23 -->
+
+    <owl:NamedIndividual rdf:about="https://www.wid.org/aservo#so2level23">
+        <rdf:type rdf:resource="https://www.wid.org/aservo#SO2Level"/>
+        <hasHourAverage rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">11.35</hasHourAverage>
+        <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2021-12-03T10:00:00+01:00</hasTime>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.wid.org/aservo#so2level24 -->
+
+    <owl:NamedIndividual rdf:about="https://www.wid.org/aservo#so2level24">
+        <rdf:type rdf:resource="https://www.wid.org/aservo#SO2Level"/>
+        <hasHourAverage rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">115.96</hasHourAverage>
+        <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2021-12-03T11:00:00+01:00</hasTime>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.wid.org/aservo#so2level25 -->
+
+    <owl:NamedIndividual rdf:about="https://www.wid.org/aservo#so2level25">
+        <rdf:type rdf:resource="https://www.wid.org/aservo#SO2Level"/>
+        <hasHourAverage rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">48.76</hasHourAverage>
+        <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2021-12-03T12:00:00+01:00</hasTime>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.wid.org/aservo#so2level26 -->
+
+    <owl:NamedIndividual rdf:about="https://www.wid.org/aservo#so2level26">
+        <rdf:type rdf:resource="https://www.wid.org/aservo#SO2Level"/>
+        <hasHourAverage rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">25.89</hasHourAverage>
+        <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2021-12-03T13:00:00+01:00</hasTime>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.wid.org/aservo#so2level27 -->
+
+    <owl:NamedIndividual rdf:about="https://www.wid.org/aservo#so2level27">
+        <rdf:type rdf:resource="https://www.wid.org/aservo#SO2Level"/>
+        <hasHourAverage rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1.0</hasHourAverage>
+        <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2021-12-03T14:00:00+01:00</hasTime>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.wid.org/aservo#so2level28 -->
+
+    <owl:NamedIndividual rdf:about="https://www.wid.org/aservo#so2level28">
+        <rdf:type rdf:resource="https://www.wid.org/aservo#SO2Level"/>
+        <hasHourAverage rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">10.92</hasHourAverage>
+        <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2021-12-03T15:00:00+01:00</hasTime>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.wid.org/aservo#so2level29 -->
+
+    <owl:NamedIndividual rdf:about="https://www.wid.org/aservo#so2level29">
+        <rdf:type rdf:resource="https://www.wid.org/aservo#SO2Level"/>
+        <hasHourAverage rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">259.08</hasHourAverage>
+        <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2021-12-03T16:00:00+01:00</hasTime>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.wid.org/aservo#so2level3 -->
+
+    <owl:NamedIndividual rdf:about="https://www.wid.org/aservo#so2level3">
+        <rdf:type rdf:resource="https://www.wid.org/aservo#SO2Level"/>
+        <hasHourAverage rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1.0</hasHourAverage>
+        <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2021-12-02T14:00:00+01:00</hasTime>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.wid.org/aservo#so2level30 -->
+
+    <owl:NamedIndividual rdf:about="https://www.wid.org/aservo#so2level30">
+        <rdf:type rdf:resource="https://www.wid.org/aservo#SO2Level"/>
+        <hasHourAverage rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">353.53</hasHourAverage>
+        <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2021-12-03T17:00:00+01:00</hasTime>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.wid.org/aservo#so2level31 -->
+
+    <owl:NamedIndividual rdf:about="https://www.wid.org/aservo#so2level31">
+        <rdf:type rdf:resource="https://www.wid.org/aservo#SO2Level"/>
+        <hasHourAverage rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">176.45</hasHourAverage>
+        <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2021-12-03T18:00:00+01:00</hasTime>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.wid.org/aservo#so2level32 -->
+
+    <owl:NamedIndividual rdf:about="https://www.wid.org/aservo#so2level32">
+        <rdf:type rdf:resource="https://www.wid.org/aservo#SO2Level"/>
+        <hasHourAverage rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">95.56</hasHourAverage>
+        <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2021-12-03T19:00:00+01:00</hasTime>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.wid.org/aservo#so2level33 -->
+
+    <owl:NamedIndividual rdf:about="https://www.wid.org/aservo#so2level33">
+        <rdf:type rdf:resource="https://www.wid.org/aservo#SO2Level"/>
+        <hasHourAverage rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">77.34</hasHourAverage>
+        <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2021-12-03T20:00:00+01:00</hasTime>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.wid.org/aservo#so2level34 -->
+
+    <owl:NamedIndividual rdf:about="https://www.wid.org/aservo#so2level34">
+        <rdf:type rdf:resource="https://www.wid.org/aservo#SO2Level"/>
+        <hasHourAverage rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">144.98</hasHourAverage>
+        <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2021-12-03T21:00:00+01:00</hasTime>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.wid.org/aservo#so2level35 -->
+
+    <owl:NamedIndividual rdf:about="https://www.wid.org/aservo#so2level35">
+        <rdf:type rdf:resource="https://www.wid.org/aservo#SO2Level"/>
+        <hasHourAverage rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">116.12</hasHourAverage>
+        <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2021-12-03T22:00:00+01:00</hasTime>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.wid.org/aservo#so2level36 -->
+
+    <owl:NamedIndividual rdf:about="https://www.wid.org/aservo#so2level36">
+        <rdf:type rdf:resource="https://www.wid.org/aservo#SO2Level"/>
+        <hasHourAverage rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">104.26</hasHourAverage>
+        <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2021-12-03T23:00:00+01:00</hasTime>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.wid.org/aservo#so2level37 -->
+
+    <owl:NamedIndividual rdf:about="https://www.wid.org/aservo#so2level37">
+        <rdf:type rdf:resource="https://www.wid.org/aservo#SO2Level"/>
+        <hasHourAverage rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">245.6</hasHourAverage>
+        <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2021-12-04T00:00:00+01:00</hasTime>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.wid.org/aservo#so2level38 -->
+
+    <owl:NamedIndividual rdf:about="https://www.wid.org/aservo#so2level38">
+        <rdf:type rdf:resource="https://www.wid.org/aservo#SO2Level"/>
+        <hasHourAverage rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">180.5</hasHourAverage>
+        <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2021-12-04T01:00:00+01:00</hasTime>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.wid.org/aservo#so2level39 -->
+
+    <owl:NamedIndividual rdf:about="https://www.wid.org/aservo#so2level39">
+        <rdf:type rdf:resource="https://www.wid.org/aservo#SO2Level"/>
+        <hasHourAverage rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">447.48</hasHourAverage>
+        <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2021-12-04T02:00:00+01:00</hasTime>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.wid.org/aservo#so2level4 -->
+
+    <owl:NamedIndividual rdf:about="https://www.wid.org/aservo#so2level4">
+        <rdf:type rdf:resource="https://www.wid.org/aservo#SO2Level"/>
+        <hasHourAverage rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1.0</hasHourAverage>
+        <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2021-12-02T15:00:00+01:00</hasTime>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.wid.org/aservo#so2level40 -->
+
+    <owl:NamedIndividual rdf:about="https://www.wid.org/aservo#so2level40">
+        <rdf:type rdf:resource="https://www.wid.org/aservo#SO2Level"/>
+        <hasHourAverage rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">534.6</hasHourAverage>
+        <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2021-12-04T03:00:00+01:00</hasTime>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.wid.org/aservo#so2level41 -->
+
+    <owl:NamedIndividual rdf:about="https://www.wid.org/aservo#so2level41">
+        <rdf:type rdf:resource="https://www.wid.org/aservo#SO2Level"/>
+        <hasHourAverage rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">223.02</hasHourAverage>
+        <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2021-12-04T04:00:00+01:00</hasTime>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.wid.org/aservo#so2level42 -->
+
+    <owl:NamedIndividual rdf:about="https://www.wid.org/aservo#so2level42">
+        <rdf:type rdf:resource="https://www.wid.org/aservo#SO2Level"/>
+        <hasHourAverage rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">168.97</hasHourAverage>
+        <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2021-12-04T05:00:00+01:00</hasTime>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.wid.org/aservo#so2level43 -->
+
+    <owl:NamedIndividual rdf:about="https://www.wid.org/aservo#so2level43">
+        <rdf:type rdf:resource="https://www.wid.org/aservo#SO2Level"/>
+        <hasHourAverage rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">155.43</hasHourAverage>
+        <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2021-12-04T06:00:00+01:00</hasTime>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.wid.org/aservo#so2level44 -->
+
+    <owl:NamedIndividual rdf:about="https://www.wid.org/aservo#so2level44">
+        <rdf:type rdf:resource="https://www.wid.org/aservo#SO2Level"/>
+        <hasHourAverage rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">30.31</hasHourAverage>
+        <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2021-12-04T07:00:00+01:00</hasTime>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.wid.org/aservo#so2level45 -->
+
+    <owl:NamedIndividual rdf:about="https://www.wid.org/aservo#so2level45">
+        <rdf:type rdf:resource="https://www.wid.org/aservo#SO2Level"/>
+        <hasHourAverage rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">3.08</hasHourAverage>
+        <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2021-12-04T08:00:00+01:00</hasTime>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.wid.org/aservo#so2level46 -->
+
+    <owl:NamedIndividual rdf:about="https://www.wid.org/aservo#so2level46">
+        <rdf:type rdf:resource="https://www.wid.org/aservo#SO2Level"/>
+        <hasHourAverage rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1.0</hasHourAverage>
+        <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2021-12-04T09:00:00+01:00</hasTime>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.wid.org/aservo#so2level47 -->
+
+    <owl:NamedIndividual rdf:about="https://www.wid.org/aservo#so2level47">
+        <rdf:type rdf:resource="https://www.wid.org/aservo#SO2Level"/>
+        <hasHourAverage rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">2.51</hasHourAverage>
+        <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2021-12-04T10:00:00+01:00</hasTime>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.wid.org/aservo#so2level48 -->
+
+    <owl:NamedIndividual rdf:about="https://www.wid.org/aservo#so2level48">
+        <rdf:type rdf:resource="https://www.wid.org/aservo#SO2Level"/>
+        <hasHourAverage rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">11.64</hasHourAverage>
+        <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2021-12-04T11:00:00+01:00</hasTime>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.wid.org/aservo#so2level5 -->
+
+    <owl:NamedIndividual rdf:about="https://www.wid.org/aservo#so2level5">
+        <rdf:type rdf:resource="https://www.wid.org/aservo#SO2Level"/>
+        <hasHourAverage rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1.0</hasHourAverage>
+        <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2021-12-02T16:00:00+01:00</hasTime>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.wid.org/aservo#so2level6 -->
+
+    <owl:NamedIndividual rdf:about="https://www.wid.org/aservo#so2level6">
+        <rdf:type rdf:resource="https://www.wid.org/aservo#SO2Level"/>
+        <hasHourAverage rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1.0</hasHourAverage>
+        <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2021-12-02T17:00:00+01:00</hasTime>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.wid.org/aservo#so2level7 -->
+
+    <owl:NamedIndividual rdf:about="https://www.wid.org/aservo#so2level7">
+        <rdf:type rdf:resource="https://www.wid.org/aservo#SO2Level"/>
+        <hasHourAverage rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1.0</hasHourAverage>
+        <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2021-12-02T18:00:00+01:00</hasTime>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.wid.org/aservo#so2level8 -->
+
+    <owl:NamedIndividual rdf:about="https://www.wid.org/aservo#so2level8">
+        <rdf:type rdf:resource="https://www.wid.org/aservo#SO2Level"/>
+        <hasHourAverage rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1.0</hasHourAverage>
+        <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2021-12-02T19:00:00+01:00</hasTime>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.wid.org/aservo#so2level9 -->
+
+    <owl:NamedIndividual rdf:about="https://www.wid.org/aservo#so2level9">
+        <rdf:type rdf:resource="https://www.wid.org/aservo#SO2Level"/>
+        <hasHourAverage rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1.0</hasHourAverage>
+        <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2021-12-02T20:00:00+01:00</hasTime>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.wid.org/aservo#spatialthing1 -->
+
+    <owl:NamedIndividual rdf:about="https://www.wid.org/aservo#spatialthing1">
+        <rdf:type rdf:resource="https://saref.etsi.org/saref4envi/SpatialThing"/>
+        <wgs8:lat rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0</wgs8:lat>
+        <wgs8:lon rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</wgs8:lon>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.wid.org/aservo#volcanlapalma1 -->
+
+    <owl:NamedIndividual rdf:about="https://www.wid.org/aservo#volcanlapalma1">
+        <rdf:type rdf:resource="https://www.wid.org/aservo#VolcanicEruption"/>
+        <core:hasProperty rdf:resource="https://www.wid.org/aservo#seismicactivity1"/>
+        <wgs8:lat rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">28.612778</wgs8:lat>
+        <wgs8:lon rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">-17.866111</wgs8:lon>
+        <hasDurationInDays rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">85</hasDurationInDays>
+        <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Cumbre Vieja</hasName>
+        <hasStartDate rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2021-09-19T14:10:00+01:00</hasStartDate>
+        <hasVolcanicExplosivityIndex rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</hasVolcanicExplosivityIndex>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="https://www.wid.org/aservo#Hawaiian"/>
+            <rdf:Description rdf:about="https://www.wid.org/aservo#HawaiianStrombolian"/>
+            <rdf:Description rdf:about="https://www.wid.org/aservo#PeleanPlinian"/>
+            <rdf:Description rdf:about="https://www.wid.org/aservo#Plinian"/>
+            <rdf:Description rdf:about="https://www.wid.org/aservo#PlinianaUltraplinian"/>
+            <rdf:Description rdf:about="https://www.wid.org/aservo#StrombolianVulcanian"/>
+            <rdf:Description rdf:about="https://www.wid.org/aservo#Vulcanian"/>
+            <rdf:Description rdf:about="https://www.wid.org/aservo#VulcanianExplosivePelean"/>
+        </owl:members>
+    </rdf:Description>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Rules
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description rdf:about="urn:swrl:var#v">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="urn:swrl:var#e">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="https://www.wid.org/aservo#VolcanicEruption"/>
+                        <swrl:argument1 rdf:resource="urn:swrl:var#v"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="https://www.wid.org/aservo#hasVolcanicExplosivityIndex"/>
+                                <swrl:argument1 rdf:resource="urn:swrl:var#v"/>
+                                <swrl:argument2 rdf:resource="urn:swrl:var#e"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#BuiltinAtom"/>
+                                        <swrl:builtin rdf:resource="http://www.w3.org/2003/11/swrlb#equal"/>
+                                        <swrl:arguments>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                <rdf:first rdf:resource="urn:swrl:var#e"/>
+                                                <rdf:rest>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                        <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</rdf:first>
+                                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                                    </rdf:Description>
+                                                </rdf:rest>
+                                            </rdf:Description>
+                                        </swrl:arguments>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="https://www.wid.org/aservo#Hawaiian"/>
+                        <swrl:argument1 rdf:resource="urn:swrl:var#v"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="https://www.wid.org/aservo#VolcanicEruption"/>
+                        <swrl:argument1 rdf:resource="urn:swrl:var#v"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="https://www.wid.org/aservo#hasVolcanicExplosivityIndex"/>
+                                <swrl:argument1 rdf:resource="urn:swrl:var#v"/>
+                                <swrl:argument2 rdf:resource="urn:swrl:var#e"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#BuiltinAtom"/>
+                                        <swrl:builtin rdf:resource="http://www.w3.org/2003/11/swrlb#equal"/>
+                                        <swrl:arguments>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                <rdf:first rdf:resource="urn:swrl:var#e"/>
+                                                <rdf:rest>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                        <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</rdf:first>
+                                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                                    </rdf:Description>
+                                                </rdf:rest>
+                                            </rdf:Description>
+                                        </swrl:arguments>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="https://www.wid.org/aservo#HawaiianStrombolian"/>
+                        <swrl:argument1 rdf:resource="urn:swrl:var#v"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="https://www.wid.org/aservo#VolcanicEruption"/>
+                        <swrl:argument1 rdf:resource="urn:swrl:var#v"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="https://www.wid.org/aservo#hasVolcanicExplosivityIndex"/>
+                                <swrl:argument1 rdf:resource="urn:swrl:var#v"/>
+                                <swrl:argument2 rdf:resource="urn:swrl:var#e"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#BuiltinAtom"/>
+                                        <swrl:builtin rdf:resource="http://www.w3.org/2003/11/swrlb#equal"/>
+                                        <swrl:arguments>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                <rdf:first rdf:resource="urn:swrl:var#e"/>
+                                                <rdf:rest>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                        <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</rdf:first>
+                                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                                    </rdf:Description>
+                                                </rdf:rest>
+                                            </rdf:Description>
+                                        </swrl:arguments>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="https://www.wid.org/aservo#StrombolianVulcanian"/>
+                        <swrl:argument1 rdf:resource="urn:swrl:var#v"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="https://www.wid.org/aservo#VolcanicEruption"/>
+                        <swrl:argument1 rdf:resource="urn:swrl:var#v"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="https://www.wid.org/aservo#hasVolcanicExplosivityIndex"/>
+                                <swrl:argument1 rdf:resource="urn:swrl:var#v"/>
+                                <swrl:argument2 rdf:resource="urn:swrl:var#e"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#BuiltinAtom"/>
+                                        <swrl:builtin rdf:resource="http://www.w3.org/2003/11/swrlb#equal"/>
+                                        <swrl:arguments>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                <rdf:first rdf:resource="urn:swrl:var#e"/>
+                                                <rdf:rest>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                        <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</rdf:first>
+                                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                                    </rdf:Description>
+                                                </rdf:rest>
+                                            </rdf:Description>
+                                        </swrl:arguments>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="https://www.wid.org/aservo#VulcanianExplosivePelean"/>
+                        <swrl:argument1 rdf:resource="urn:swrl:var#v"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="https://www.wid.org/aservo#VolcanicEruption"/>
+                        <swrl:argument1 rdf:resource="urn:swrl:var#v"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="https://www.wid.org/aservo#hasVolcanicExplosivityIndex"/>
+                                <swrl:argument1 rdf:resource="urn:swrl:var#v"/>
+                                <swrl:argument2 rdf:resource="urn:swrl:var#e"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#BuiltinAtom"/>
+                                        <swrl:builtin rdf:resource="http://www.w3.org/2003/11/swrlb#equal"/>
+                                        <swrl:arguments>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                <rdf:first rdf:resource="urn:swrl:var#e"/>
+                                                <rdf:rest>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                        <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</rdf:first>
+                                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                                    </rdf:Description>
+                                                </rdf:rest>
+                                            </rdf:Description>
+                                        </swrl:arguments>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="https://www.wid.org/aservo#PeleanPlinian"/>
+                        <swrl:argument1 rdf:resource="urn:swrl:var#v"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="https://www.wid.org/aservo#VolcanicEruption"/>
+                        <swrl:argument1 rdf:resource="urn:swrl:var#v"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="https://www.wid.org/aservo#hasVolcanicExplosivityIndex"/>
+                                <swrl:argument1 rdf:resource="urn:swrl:var#v"/>
+                                <swrl:argument2 rdf:resource="urn:swrl:var#e"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#BuiltinAtom"/>
+                                        <swrl:builtin rdf:resource="http://www.w3.org/2003/11/swrlb#equal"/>
+                                        <swrl:arguments>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                <rdf:first rdf:resource="urn:swrl:var#e"/>
+                                                <rdf:rest>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                        <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</rdf:first>
+                                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                                    </rdf:Description>
+                                                </rdf:rest>
+                                            </rdf:Description>
+                                        </swrl:arguments>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="https://www.wid.org/aservo#Plinian"/>
+                        <swrl:argument1 rdf:resource="urn:swrl:var#v"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="https://www.wid.org/aservo#VolcanicEruption"/>
+                        <swrl:argument1 rdf:resource="urn:swrl:var#v"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="https://www.wid.org/aservo#hasVolcanicExplosivityIndex"/>
+                                <swrl:argument1 rdf:resource="urn:swrl:var#v"/>
+                                <swrl:argument2 rdf:resource="urn:swrl:var#e"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#BuiltinAtom"/>
+                                        <swrl:builtin rdf:resource="http://www.w3.org/2003/11/swrlb#greaterThanOrEqual"/>
+                                        <swrl:arguments>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                <rdf:first rdf:resource="urn:swrl:var#e"/>
+                                                <rdf:rest>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                        <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">6</rdf:first>
+                                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                                    </rdf:Description>
+                                                </rdf:rest>
+                                            </rdf:Description>
+                                        </swrl:arguments>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="https://www.wid.org/aservo#PlinianaUltraplinian"/>
+                        <swrl:argument1 rdf:resource="urn:swrl:var#v"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+

@@ -3,7 +3,6 @@
      xml:base="https://www.w3id.org/aservo"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-     xmlns:urn="urn:webprotege:ontology:6d655d97-618e-4cd2-840b-832a836ae541#"
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:core="https://saref.etsi.org/core/"
@@ -15,7 +14,8 @@
      xmlns:terms="http://purl.org/dc/terms/"
      xmlns:aservo="https://www.w3id.org/aservo#"
      xmlns:aservo1="https://www.w3id.org/aservo:aservo#"
-     xmlns:webprotege="http://webprotege.stanford.edu/">
+     xmlns:webprotege="http://webprotege.stanford.edu/"
+     xmlns:d655d97-618e-4cd2-840b-832a836ae541="urn:webprotege:ontology:6d655d97-618e-4cd2-840b-832a836ae541#">
     <owl:Ontology rdf:about="https://www.w3id.org/aservo">
         <owl:versionIRI rdf:resource="https://www.w3id.org/aservo"/>
         <terms:license>http://purl.org/NET/rdflicense/cc-by4.0</terms:license>
@@ -188,6 +188,17 @@
         <rdfs:range rdf:resource="https://www.w3id.org/aservo#VolcanicEruption"/>
         <rdfs:comment>Populations risks caused by a volcanic eruption</rdfs:comment>
         <rdfs:label>causedBy</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.w3id.org/aservo#hasLocation -->
+
+    <owl:ObjectProperty rdf:about="https://www.w3id.org/aservo#hasLocation">
+        <rdfs:domain rdf:resource="https://saref.etsi.org/core/FeatureOfInterest"/>
+        <rdfs:range rdf:resource="https://saref.etsi.org/saref4envi/SpatialObject"/>
+        <rdfs:comment>A feature of interest has a location represented by a spatial object</rdfs:comment>
+        <rdfs:label>hasLocation</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -634,12 +645,7 @@
     <!-- https://www.w3id.org/aservo#AirQuality -->
 
     <owl:Class rdf:about="https://www.w3id.org/aservo#AirQuality">
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://saref.etsi.org/core/hasProperty"/>
-                <owl:someValuesFrom rdf:resource="https://www.w3id.org/aservo:aservo#AirQualityProperties"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
+        <rdfs:subClassOf rdf:resource="https://www.w3id.org/aservo:aservo#AirQualityProperties"/>
         <rdfs:comment rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">The quality of the air in the area observed</rdfs:comment>
         <rdfs:label>AirQuality</rdfs:label>
     </owl:Class>
@@ -1024,7 +1030,7 @@
         <hasDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2021-09-18T00:24:46+01:00</hasDate>
         <hasDepth rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">6.1</hasDepth>
         <hasIntensity rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</hasIntensity>
-        <urn:isMagnitudeType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">mbLg</urn:isMagnitudeType>
+        <d655d97-618e-4cd2-840b-832a836ae541:isMagnitudeType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">mbLg</d655d97-618e-4cd2-840b-832a836ae541:isMagnitudeType>
     </owl:NamedIndividual>
     
 
@@ -1039,7 +1045,7 @@
         <hasDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2021-09-18T01:06:06+01:00</hasDate>
         <hasDepth rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">6.1</hasDepth>
         <hasIntensity rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</hasIntensity>
-        <urn:isMagnitudeType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">mbLg</urn:isMagnitudeType>
+        <d655d97-618e-4cd2-840b-832a836ae541:isMagnitudeType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">mbLg</d655d97-618e-4cd2-840b-832a836ae541:isMagnitudeType>
     </owl:NamedIndividual>
     
 

@@ -128,6 +128,14 @@ xsd:Date rdf:type owl:AnnotationProperty ;
           rdfs:label "causedBy" .
 
 
+###  https://www.w3id.org/aservo#hasLocation
+:hasLocation rdf:type owl:ObjectProperty ;
+             rdfs:domain <https://saref.etsi.org/core/FeatureOfInterest> ;
+             rdfs:range <https://saref.etsi.org/saref4envi/SpatialObject> ;
+             rdfs:comment "A feature of interest has a location represented by a spatial object" ;
+             rdfs:label "hasLocation" .
+
+
 ###  https://www.w3id.org/aservo:aservo#provokes
 <https://www.w3id.org/aservo:aservo#provokes> rdf:type owl:ObjectProperty ,
                                                        owl:AsymmetricProperty ;
@@ -450,10 +458,7 @@ xsd:Date rdf:type owl:AnnotationProperty ;
 
 ###  https://www.w3id.org/aservo#AirQuality
 :AirQuality rdf:type owl:Class ;
-            rdfs:subClassOf [ rdf:type owl:Restriction ;
-                              owl:onProperty <https://saref.etsi.org/core/hasProperty> ;
-                              owl:someValuesFrom <https://www.w3id.org/aservo:aservo#AirQualityProperties>
-                            ] ;
+            rdfs:subClassOf <https://www.w3id.org/aservo:aservo#AirQualityProperties> ;
             rdfs:comment "The quality of the air in the area observed"^^rdfs:Literal ;
             rdfs:label "AirQuality" .
 

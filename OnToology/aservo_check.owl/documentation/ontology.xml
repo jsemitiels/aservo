@@ -205,6 +205,18 @@
     
 
 
+    <!-- https://www.w3id.org/aservo#hasLocation -->
+
+
+    <owl:ObjectProperty rdf:about="https://www.w3id.org/aservo#hasLocation">
+        <rdfs:domain rdf:resource="https://saref.etsi.org/core/FeatureOfInterest"/>
+        <rdfs:range rdf:resource="https://saref.etsi.org/saref4envi/SpatialObject"/>
+        <rdfs:comment>A feature of interest has a location represented by a spatial object</rdfs:comment>
+        <rdfs:label>hasLocation</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
     <!-- https://www.w3id.org/aservo:aservo#provokes -->
 
 
@@ -685,12 +697,7 @@
 
 
     <owl:Class rdf:about="https://www.w3id.org/aservo#AirQuality">
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://saref.etsi.org/core/hasProperty"/>
-                <owl:someValuesFrom rdf:resource="https://www.w3id.org/aservo:aservo#AirQualityProperties"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
+        <rdfs:subClassOf rdf:resource="https://www.w3id.org/aservo:aservo#AirQualityProperties"/>
         <rdfs:comment rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">The quality of the air in the area observed</rdfs:comment>
         <rdfs:label>AirQuality</rdfs:label>
     </owl:Class>

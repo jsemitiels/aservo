@@ -5,27 +5,27 @@
     "@id" : "https://saref.etsi.org/core/hasProperty"
   } ],
   "http://www.w3.org/2002/07/owl#someValuesFrom" : [ {
-    "@id" : "https://www.w3id.org/aservo:aservo#AirQualityProperties"
+    "@id" : "https://saref.etsi.org/core/Property"
   } ]
 }, {
-  "@id" : "_:genid12",
+  "@id" : "_:genid11",
   "@type" : [ "http://www.w3.org/2003/11/swrl#Imp" ],
   "http://www.w3.org/2003/11/swrl#body" : [ {
     "@list" : [ {
-      "@id" : "_:genid20"
+      "@id" : "_:genid19"
     }, {
-      "@id" : "_:genid18"
+      "@id" : "_:genid17"
     }, {
-      "@id" : "_:genid14"
+      "@id" : "_:genid13"
     } ]
   } ],
   "http://www.w3.org/2003/11/swrl#head" : [ {
     "@list" : [ {
-      "@id" : "_:genid22"
+      "@id" : "_:genid21"
     } ]
   } ]
 }, {
-  "@id" : "_:genid14",
+  "@id" : "_:genid13",
   "@type" : [ "http://www.w3.org/2003/11/swrl#BuiltinAtom" ],
   "http://www.w3.org/2003/11/swrl#arguments" : [ {
     "@list" : [ {
@@ -39,7 +39,7 @@
     "@id" : "http://www.w3.org/2003/11/swrlb#equal"
   } ]
 }, {
-  "@id" : "_:genid18",
+  "@id" : "_:genid17",
   "@type" : [ "http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom" ],
   "http://www.w3.org/2003/11/swrl#argument1" : [ {
     "@id" : "urn:swrl:var#v"
@@ -51,16 +51,7 @@
     "@id" : "https://www.w3id.org/aservo#hasVolcanicExplosivityIndex"
   } ]
 }, {
-  "@id" : "_:genid2",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
-  "http://www.w3.org/2002/07/owl#onProperty" : [ {
-    "@id" : "https://saref.etsi.org/core/hasProperty"
-  } ],
-  "http://www.w3.org/2002/07/owl#someValuesFrom" : [ {
-    "@id" : "https://saref.etsi.org/core/Property"
-  } ]
-}, {
-  "@id" : "_:genid20",
+  "@id" : "_:genid19",
   "@type" : [ "http://www.w3.org/2003/11/swrl#ClassAtom" ],
   "http://www.w3.org/2003/11/swrl#argument1" : [ {
     "@id" : "urn:swrl:var#v"
@@ -69,59 +60,7 @@
     "@id" : "https://www.w3id.org/aservo#VolcanicEruption"
   } ]
 }, {
-  "@id" : "_:genid22",
-  "@type" : [ "http://www.w3.org/2003/11/swrl#ClassAtom" ],
-  "http://www.w3.org/2003/11/swrl#argument1" : [ {
-    "@id" : "urn:swrl:var#v"
-  } ],
-  "http://www.w3.org/2003/11/swrl#classPredicate" : [ {
-    "@id" : "https://www.w3id.org/aservo#Hawaiian"
-  } ]
-}, {
-  "@id" : "_:genid23",
-  "@type" : [ "http://www.w3.org/2003/11/swrl#Imp" ],
-  "http://www.w3.org/2003/11/swrl#body" : [ {
-    "@list" : [ {
-      "@id" : "_:genid31"
-    }, {
-      "@id" : "_:genid29"
-    }, {
-      "@id" : "_:genid25"
-    } ]
-  } ],
-  "http://www.w3.org/2003/11/swrl#head" : [ {
-    "@list" : [ {
-      "@id" : "_:genid33"
-    } ]
-  } ]
-}, {
-  "@id" : "_:genid25",
-  "@type" : [ "http://www.w3.org/2003/11/swrl#BuiltinAtom" ],
-  "http://www.w3.org/2003/11/swrl#arguments" : [ {
-    "@list" : [ {
-      "@id" : "urn:swrl:var#e"
-    }, {
-      "@type" : "http://www.w3.org/2001/XMLSchema#integer",
-      "@value" : "1"
-    } ]
-  } ],
-  "http://www.w3.org/2003/11/swrl#builtin" : [ {
-    "@id" : "http://www.w3.org/2003/11/swrlb#equal"
-  } ]
-}, {
-  "@id" : "_:genid29",
-  "@type" : [ "http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom" ],
-  "http://www.w3.org/2003/11/swrl#argument1" : [ {
-    "@id" : "urn:swrl:var#v"
-  } ],
-  "http://www.w3.org/2003/11/swrl#argument2" : [ {
-    "@id" : "urn:swrl:var#e"
-  } ],
-  "http://www.w3.org/2003/11/swrl#propertyPredicate" : [ {
-    "@id" : "https://www.w3id.org/aservo#hasVolcanicExplosivityIndex"
-  } ]
-}, {
-  "@id" : "_:genid3",
+  "@id" : "_:genid2",
   "@type" : [ "http://www.w3.org/2002/07/owl#AllDisjointClasses" ],
   "http://www.w3.org/2002/07/owl#members" : [ {
     "@list" : [ {
@@ -143,7 +82,59 @@
     } ]
   } ]
 }, {
-  "@id" : "_:genid31",
+  "@id" : "_:genid21",
+  "@type" : [ "http://www.w3.org/2003/11/swrl#ClassAtom" ],
+  "http://www.w3.org/2003/11/swrl#argument1" : [ {
+    "@id" : "urn:swrl:var#v"
+  } ],
+  "http://www.w3.org/2003/11/swrl#classPredicate" : [ {
+    "@id" : "https://www.w3id.org/aservo#Hawaiian"
+  } ]
+}, {
+  "@id" : "_:genid22",
+  "@type" : [ "http://www.w3.org/2003/11/swrl#Imp" ],
+  "http://www.w3.org/2003/11/swrl#body" : [ {
+    "@list" : [ {
+      "@id" : "_:genid30"
+    }, {
+      "@id" : "_:genid28"
+    }, {
+      "@id" : "_:genid24"
+    } ]
+  } ],
+  "http://www.w3.org/2003/11/swrl#head" : [ {
+    "@list" : [ {
+      "@id" : "_:genid32"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid24",
+  "@type" : [ "http://www.w3.org/2003/11/swrl#BuiltinAtom" ],
+  "http://www.w3.org/2003/11/swrl#arguments" : [ {
+    "@list" : [ {
+      "@id" : "urn:swrl:var#e"
+    }, {
+      "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+      "@value" : "1"
+    } ]
+  } ],
+  "http://www.w3.org/2003/11/swrl#builtin" : [ {
+    "@id" : "http://www.w3.org/2003/11/swrlb#equal"
+  } ]
+}, {
+  "@id" : "_:genid28",
+  "@type" : [ "http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom" ],
+  "http://www.w3.org/2003/11/swrl#argument1" : [ {
+    "@id" : "urn:swrl:var#v"
+  } ],
+  "http://www.w3.org/2003/11/swrl#argument2" : [ {
+    "@id" : "urn:swrl:var#e"
+  } ],
+  "http://www.w3.org/2003/11/swrl#propertyPredicate" : [ {
+    "@id" : "https://www.w3id.org/aservo#hasVolcanicExplosivityIndex"
+  } ]
+}, {
+  "@id" : "_:genid30",
   "@type" : [ "http://www.w3.org/2003/11/swrl#ClassAtom" ],
   "http://www.w3.org/2003/11/swrl#argument1" : [ {
     "@id" : "urn:swrl:var#v"
@@ -152,7 +143,7 @@
     "@id" : "https://www.w3id.org/aservo#VolcanicEruption"
   } ]
 }, {
-  "@id" : "_:genid33",
+  "@id" : "_:genid32",
   "@type" : [ "http://www.w3.org/2003/11/swrl#ClassAtom" ],
   "http://www.w3.org/2003/11/swrl#argument1" : [ {
     "@id" : "urn:swrl:var#v"
@@ -161,24 +152,24 @@
     "@id" : "https://www.w3id.org/aservo#HawaiianStrombolian"
   } ]
 }, {
-  "@id" : "_:genid34",
+  "@id" : "_:genid33",
   "@type" : [ "http://www.w3.org/2003/11/swrl#Imp" ],
   "http://www.w3.org/2003/11/swrl#body" : [ {
     "@list" : [ {
-      "@id" : "_:genid42"
+      "@id" : "_:genid41"
     }, {
-      "@id" : "_:genid40"
+      "@id" : "_:genid39"
     }, {
-      "@id" : "_:genid36"
+      "@id" : "_:genid35"
     } ]
   } ],
   "http://www.w3.org/2003/11/swrl#head" : [ {
     "@list" : [ {
-      "@id" : "_:genid44"
+      "@id" : "_:genid43"
     } ]
   } ]
 }, {
-  "@id" : "_:genid36",
+  "@id" : "_:genid35",
   "@type" : [ "http://www.w3.org/2003/11/swrl#BuiltinAtom" ],
   "http://www.w3.org/2003/11/swrl#arguments" : [ {
     "@list" : [ {
@@ -192,7 +183,7 @@
     "@id" : "http://www.w3.org/2003/11/swrlb#equal"
   } ]
 }, {
-  "@id" : "_:genid40",
+  "@id" : "_:genid39",
   "@type" : [ "http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom" ],
   "http://www.w3.org/2003/11/swrl#argument1" : [ {
     "@id" : "urn:swrl:var#v"
@@ -204,7 +195,7 @@
     "@id" : "https://www.w3id.org/aservo#hasVolcanicExplosivityIndex"
   } ]
 }, {
-  "@id" : "_:genid42",
+  "@id" : "_:genid41",
   "@type" : [ "http://www.w3.org/2003/11/swrl#ClassAtom" ],
   "http://www.w3.org/2003/11/swrl#argument1" : [ {
     "@id" : "urn:swrl:var#v"
@@ -213,7 +204,7 @@
     "@id" : "https://www.w3id.org/aservo#VolcanicEruption"
   } ]
 }, {
-  "@id" : "_:genid44",
+  "@id" : "_:genid43",
   "@type" : [ "http://www.w3.org/2003/11/swrl#ClassAtom" ],
   "http://www.w3.org/2003/11/swrl#argument1" : [ {
     "@id" : "urn:swrl:var#v"
@@ -222,24 +213,24 @@
     "@id" : "https://www.w3id.org/aservo#StrombolianVulcanian"
   } ]
 }, {
-  "@id" : "_:genid45",
+  "@id" : "_:genid44",
   "@type" : [ "http://www.w3.org/2003/11/swrl#Imp" ],
   "http://www.w3.org/2003/11/swrl#body" : [ {
     "@list" : [ {
-      "@id" : "_:genid53"
+      "@id" : "_:genid52"
     }, {
-      "@id" : "_:genid51"
+      "@id" : "_:genid50"
     }, {
-      "@id" : "_:genid47"
+      "@id" : "_:genid46"
     } ]
   } ],
   "http://www.w3.org/2003/11/swrl#head" : [ {
     "@list" : [ {
-      "@id" : "_:genid55"
+      "@id" : "_:genid54"
     } ]
   } ]
 }, {
-  "@id" : "_:genid47",
+  "@id" : "_:genid46",
   "@type" : [ "http://www.w3.org/2003/11/swrl#BuiltinAtom" ],
   "http://www.w3.org/2003/11/swrl#arguments" : [ {
     "@list" : [ {
@@ -253,7 +244,7 @@
     "@id" : "http://www.w3.org/2003/11/swrlb#equal"
   } ]
 }, {
-  "@id" : "_:genid51",
+  "@id" : "_:genid50",
   "@type" : [ "http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom" ],
   "http://www.w3.org/2003/11/swrl#argument1" : [ {
     "@id" : "urn:swrl:var#v"
@@ -265,7 +256,7 @@
     "@id" : "https://www.w3id.org/aservo#hasVolcanicExplosivityIndex"
   } ]
 }, {
-  "@id" : "_:genid53",
+  "@id" : "_:genid52",
   "@type" : [ "http://www.w3.org/2003/11/swrl#ClassAtom" ],
   "http://www.w3.org/2003/11/swrl#argument1" : [ {
     "@id" : "urn:swrl:var#v"
@@ -274,7 +265,7 @@
     "@id" : "https://www.w3id.org/aservo#VolcanicEruption"
   } ]
 }, {
-  "@id" : "_:genid55",
+  "@id" : "_:genid54",
   "@type" : [ "http://www.w3.org/2003/11/swrl#ClassAtom" ],
   "http://www.w3.org/2003/11/swrl#argument1" : [ {
     "@id" : "urn:swrl:var#v"
@@ -283,24 +274,24 @@
     "@id" : "https://www.w3id.org/aservo#VulcanianExplosivePelean"
   } ]
 }, {
-  "@id" : "_:genid56",
+  "@id" : "_:genid55",
   "@type" : [ "http://www.w3.org/2003/11/swrl#Imp" ],
   "http://www.w3.org/2003/11/swrl#body" : [ {
     "@list" : [ {
-      "@id" : "_:genid64"
+      "@id" : "_:genid63"
     }, {
-      "@id" : "_:genid62"
+      "@id" : "_:genid61"
     }, {
-      "@id" : "_:genid58"
+      "@id" : "_:genid57"
     } ]
   } ],
   "http://www.w3.org/2003/11/swrl#head" : [ {
     "@list" : [ {
-      "@id" : "_:genid66"
+      "@id" : "_:genid65"
     } ]
   } ]
 }, {
-  "@id" : "_:genid58",
+  "@id" : "_:genid57",
   "@type" : [ "http://www.w3.org/2003/11/swrl#BuiltinAtom" ],
   "http://www.w3.org/2003/11/swrl#arguments" : [ {
     "@list" : [ {
@@ -314,7 +305,7 @@
     "@id" : "http://www.w3.org/2003/11/swrlb#equal"
   } ]
 }, {
-  "@id" : "_:genid62",
+  "@id" : "_:genid61",
   "@type" : [ "http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom" ],
   "http://www.w3.org/2003/11/swrl#argument1" : [ {
     "@id" : "urn:swrl:var#v"
@@ -326,7 +317,7 @@
     "@id" : "https://www.w3id.org/aservo#hasVolcanicExplosivityIndex"
   } ]
 }, {
-  "@id" : "_:genid64",
+  "@id" : "_:genid63",
   "@type" : [ "http://www.w3.org/2003/11/swrl#ClassAtom" ],
   "http://www.w3.org/2003/11/swrl#argument1" : [ {
     "@id" : "urn:swrl:var#v"
@@ -335,7 +326,7 @@
     "@id" : "https://www.w3id.org/aservo#VolcanicEruption"
   } ]
 }, {
-  "@id" : "_:genid66",
+  "@id" : "_:genid65",
   "@type" : [ "http://www.w3.org/2003/11/swrl#ClassAtom" ],
   "http://www.w3.org/2003/11/swrl#argument1" : [ {
     "@id" : "urn:swrl:var#v"
@@ -344,24 +335,24 @@
     "@id" : "https://www.w3id.org/aservo#PeleanPlinian"
   } ]
 }, {
-  "@id" : "_:genid67",
+  "@id" : "_:genid66",
   "@type" : [ "http://www.w3.org/2003/11/swrl#Imp" ],
   "http://www.w3.org/2003/11/swrl#body" : [ {
     "@list" : [ {
-      "@id" : "_:genid75"
+      "@id" : "_:genid74"
     }, {
-      "@id" : "_:genid73"
+      "@id" : "_:genid72"
     }, {
-      "@id" : "_:genid69"
+      "@id" : "_:genid68"
     } ]
   } ],
   "http://www.w3.org/2003/11/swrl#head" : [ {
     "@list" : [ {
-      "@id" : "_:genid77"
+      "@id" : "_:genid76"
     } ]
   } ]
 }, {
-  "@id" : "_:genid69",
+  "@id" : "_:genid68",
   "@type" : [ "http://www.w3.org/2003/11/swrl#BuiltinAtom" ],
   "http://www.w3.org/2003/11/swrl#arguments" : [ {
     "@list" : [ {
@@ -375,7 +366,7 @@
     "@id" : "http://www.w3.org/2003/11/swrlb#equal"
   } ]
 }, {
-  "@id" : "_:genid73",
+  "@id" : "_:genid72",
   "@type" : [ "http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom" ],
   "http://www.w3.org/2003/11/swrl#argument1" : [ {
     "@id" : "urn:swrl:var#v"
@@ -387,7 +378,7 @@
     "@id" : "https://www.w3id.org/aservo#hasVolcanicExplosivityIndex"
   } ]
 }, {
-  "@id" : "_:genid75",
+  "@id" : "_:genid74",
   "@type" : [ "http://www.w3.org/2003/11/swrl#ClassAtom" ],
   "http://www.w3.org/2003/11/swrl#argument1" : [ {
     "@id" : "urn:swrl:var#v"
@@ -396,7 +387,7 @@
     "@id" : "https://www.w3id.org/aservo#VolcanicEruption"
   } ]
 }, {
-  "@id" : "_:genid77",
+  "@id" : "_:genid76",
   "@type" : [ "http://www.w3.org/2003/11/swrl#ClassAtom" ],
   "http://www.w3.org/2003/11/swrl#argument1" : [ {
     "@id" : "urn:swrl:var#v"
@@ -405,24 +396,24 @@
     "@id" : "https://www.w3id.org/aservo#Plinian"
   } ]
 }, {
-  "@id" : "_:genid78",
+  "@id" : "_:genid77",
   "@type" : [ "http://www.w3.org/2003/11/swrl#Imp" ],
   "http://www.w3.org/2003/11/swrl#body" : [ {
     "@list" : [ {
-      "@id" : "_:genid86"
+      "@id" : "_:genid85"
     }, {
-      "@id" : "_:genid84"
+      "@id" : "_:genid83"
     }, {
-      "@id" : "_:genid80"
+      "@id" : "_:genid79"
     } ]
   } ],
   "http://www.w3.org/2003/11/swrl#head" : [ {
     "@list" : [ {
-      "@id" : "_:genid88"
+      "@id" : "_:genid87"
     } ]
   } ]
 }, {
-  "@id" : "_:genid80",
+  "@id" : "_:genid79",
   "@type" : [ "http://www.w3.org/2003/11/swrl#BuiltinAtom" ],
   "http://www.w3.org/2003/11/swrl#arguments" : [ {
     "@list" : [ {
@@ -436,7 +427,7 @@
     "@id" : "http://www.w3.org/2003/11/swrlb#greaterThanOrEqual"
   } ]
 }, {
-  "@id" : "_:genid84",
+  "@id" : "_:genid83",
   "@type" : [ "http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom" ],
   "http://www.w3.org/2003/11/swrl#argument1" : [ {
     "@id" : "urn:swrl:var#v"
@@ -448,7 +439,7 @@
     "@id" : "https://www.w3id.org/aservo#hasVolcanicExplosivityIndex"
   } ]
 }, {
-  "@id" : "_:genid86",
+  "@id" : "_:genid85",
   "@type" : [ "http://www.w3.org/2003/11/swrl#ClassAtom" ],
   "http://www.w3.org/2003/11/swrl#argument1" : [ {
     "@id" : "urn:swrl:var#v"
@@ -457,7 +448,7 @@
     "@id" : "https://www.w3id.org/aservo#VolcanicEruption"
   } ]
 }, {
-  "@id" : "_:genid88",
+  "@id" : "_:genid87",
   "@type" : [ "http://www.w3.org/2003/11/swrl#ClassAtom" ],
   "http://www.w3.org/2003/11/swrl#argument1" : [ {
     "@id" : "urn:swrl:var#v"
@@ -785,7 +776,7 @@
     "@value" : "AirQuality"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "_:genid1"
+    "@id" : "https://www.w3id.org/aservo:aservo#AirQualityProperties"
   } ]
 }, {
   "@id" : "https://www.w3id.org/aservo#AirQualitySensor",
@@ -997,7 +988,7 @@
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
     "@id" : "https://saref.etsi.org/core/FeatureOfInterest"
   }, {
-    "@id" : "_:genid2"
+    "@id" : "_:genid1"
   } ]
 }, {
   "@id" : "https://www.w3id.org/aservo#Vulcanian",
@@ -1242,6 +1233,21 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
     "@id" : "http://www.w3.org/2002/07/owl#topDataProperty"
+  } ]
+}, {
+  "@id" : "https://www.w3id.org/aservo#hasLocation",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "A feature of interest has a location represented by a spatial object"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://saref.etsi.org/core/FeatureOfInterest"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "hasLocation"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://saref.etsi.org/saref4envi/SpatialObject"
   } ]
 }, {
   "@id" : "https://www.w3id.org/aservo#hasLongitude",

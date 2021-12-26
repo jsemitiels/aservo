@@ -165,7 +165,11 @@ This section provides details for each class and property defined by Ontology ab
       </div>
       <dl class="description">
          <dt>has super-classes</dt>
-         <dd/>
+         <dd>
+            <a href="#https://www.w3id.org/aservo:aservo#AirQualityProperties"
+               title="https://www.w3id.org/aservo:aservo#AirQualityProperties">AirQualityProperties</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
          <dt>has sub-classes</dt>
          <dd>
             <a href="#https://www.w3id.org/aservo#NO2Level" title="https://www.w3id.org/aservo#NO2Level">NO2Level</a>
@@ -189,6 +193,11 @@ This section provides details for each class and property defined by Ontology ab
          <dt>has super-classes</dt>
          <dd>
             <a href="#https://saref.etsi.org/core/Property" title="https://saref.etsi.org/core/Property">Property</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>has sub-classes</dt>
+         <dd>
+            <a href="#https://www.w3id.org/aservo#AirQuality" title="https://www.w3id.org/aservo#AirQuality">AirQuality</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
          <dt>is in domain of</dt>
@@ -270,7 +279,8 @@ This section provides details for each class and property defined by Ontology ab
          </dd>
          <dt>is in domain of</dt>
          <dd>
-            <a href="#https://saref.etsi.org/core/hasMeasurement" title="https://saref.etsi.org/core/hasMeasurement">hasMeasurement</a>
+            <a href="#https://www.w3id.org/aservo#hasLocation" title="https://www.w3id.org/aservo#hasLocation">hasLocation</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#https://saref.etsi.org/core/hasMeasurement" title="https://saref.etsi.org/core/hasMeasurement">hasMeasurement</a>
             <sup class="type-op" title="object property">op</sup>, <a href="#https://saref.etsi.org/core/hasProperty" title="https://saref.etsi.org/core/hasProperty">hasProperty</a>
             <sup class="type-op" title="object property">op</sup>
          </dd>
@@ -778,6 +788,11 @@ This section provides details for each class and property defined by Ontology ab
             <a href="#http://www.w3.org/2003/01/geo/wgs84_pos#Location" title="http://www.w3.org/2003/01/geo/wgs84_pos#Location">geo:Location</a>
             <sup class="type-op" title="object property">op</sup>
          </dd>
+         <dt>is in range of</dt>
+         <dd>
+            <a href="#https://www.w3id.org/aservo#hasLocation" title="https://www.w3id.org/aservo#hasLocation">hasLocation</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
       </dl>
    </div>
    <div class="entity" id="https://saref.etsi.org/saref4envi/SpatialThing">
@@ -971,6 +986,9 @@ This section provides details for each class and property defined by Ontology ab
          <a href="#http://www.w3.org/2003/01/geo/wgs84_pos#Location" title="http://www.w3.org/2003/01/geo/wgs84_pos#Location">geo:Location</a>
       </li>
       <li>
+         <a href="#https://www.w3id.org/aservo#hasLocation" title="https://www.w3id.org/aservo#hasLocation">hasLocation</a>
+      </li>
+      <li>
          <a href="#https://saref.etsi.org/core/hasMeasurement" title="https://saref.etsi.org/core/hasMeasurement">hasMeasurement</a>
       </li>
       <li>
@@ -1060,6 +1078,31 @@ This section provides details for each class and property defined by Ontology ab
             <dt>has range</dt>
             <dd>
                <a href="#https://saref.etsi.org/saref4envi/SpatialThing" title="https://saref.etsi.org/saref4envi/SpatialThing">SpatialThing</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="https://www.w3id.org/aservo#hasLocation">
+      <h3>hasLocation<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://www.w3id.org/aservo#hasLocation</p>
+      <div class="comment">
+         <span class="markdown">A feature of interest has a location represented by a spatial object</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#https://saref.etsi.org/core/FeatureOfInterest" title="https://saref.etsi.org/core/FeatureOfInterest">FeatureOfInterest</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#https://saref.etsi.org/saref4envi/SpatialObject" title="https://saref.etsi.org/saref4envi/SpatialObject">SpatialObject</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
          </dl>

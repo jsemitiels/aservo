@@ -242,6 +242,10 @@
     "Plinian" : {
       "@id" : "https://www.w3id.org/aservo#Plinian"
     },
+    "hasLocation" : {
+      "@id" : "https://www.w3id.org/aservo#hasLocation",
+      "@type" : "@id"
+    },
     "provokes" : {
       "@id" : "https://www.w3id.org/aservo:aservo#provokes",
       "@type" : "@id"

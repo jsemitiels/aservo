@@ -1,2 +1,0 @@
-# aservo
-Aservo ontology

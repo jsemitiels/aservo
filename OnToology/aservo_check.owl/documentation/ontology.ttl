@@ -32,21 +32,18 @@ xsd:Date rdf:type owl:AnnotationProperty ;
 #    Object Properties
 #################################################################
 
-###  http://www.w3.org/2003/01/geo/wgs84_pos#Location
-<http://www.w3.org/2003/01/geo/wgs84_pos#Location> rdf:type owl:ObjectProperty ,
+###  http://www.w3.org/2003/01/geo/wgs84_pos#location
+<http://www.w3.org/2003/01/geo/wgs84_pos#location> rdf:type owl:ObjectProperty ,
                                                             owl:FunctionalProperty ;
-                                                   rdfs:domain <https://saref.etsi.org/saref4envi/SpatialObject> ;
-                                                   rdfs:range <https://saref.etsi.org/saref4envi/SpatialThing> ;
                                                    rdfs:comment "Location of the spatial thing related with a spatial object" ;
-                                                   rdfs:label "geo:Location" .
+                                                   rdfs:label "geo:location" .
 
 
 ###  https://saref.etsi.org/core/hasMeasurement
 <https://saref.etsi.org/core/hasMeasurement> rdf:type owl:ObjectProperty ;
                                              owl:inverseOf <https://saref.etsi.org/core/isMeasurementOf> ;
-                                             rdf:type owl:FunctionalProperty ;
                                              rdfs:domain <https://saref.etsi.org/core/FeatureOfInterest> ;
-                                             rdfs:range <https://saref.etsi.org/saref4envi/Measurement> ;
+                                             rdfs:range <https://saref.etsi.org/core/Measurement> ;
                                              rdfs:comment "Measures of a feature of interest" ;
                                              rdfs:label "hasMeasurement" .
 
@@ -54,17 +51,23 @@ xsd:Date rdf:type owl:AnnotationProperty ;
 ###  https://saref.etsi.org/core/hasProperty
 <https://saref.etsi.org/core/hasProperty> rdf:type owl:ObjectProperty ;
                                           owl:inverseOf <https://saref.etsi.org/core/isPropertyOf> ;
-                                          rdf:type owl:FunctionalProperty ;
                                           rdfs:domain <https://saref.etsi.org/core/FeatureOfInterest> ;
                                           rdfs:range <https://saref.etsi.org/core/Property> ;
                                           rdfs:comment "Property of a feature of interest" ;
                                           rdfs:label "hasProperty" .
 
 
+###  https://saref.etsi.org/core/isMeasuredIn
+<https://saref.etsi.org/core/isMeasuredIn> rdf:type owl:ObjectProperty ,
+                                                    owl:FunctionalProperty ;
+                                           rdfs:domain <https://saref.etsi.org/core/Measurement> ;
+                                           rdfs:range <https://saref.etsi.org/core/UnitOfMeasure> .
+
+
 ###  https://saref.etsi.org/core/isMeasurementOf
 <https://saref.etsi.org/core/isMeasurementOf> rdf:type owl:ObjectProperty ,
                                                        owl:FunctionalProperty ;
-                                              rdfs:domain <https://saref.etsi.org/saref4envi/Measurement> ;
+                                              rdfs:domain <https://saref.etsi.org/core/Measurement> ;
                                               rdfs:range <https://saref.etsi.org/core/FeatureOfInterest> ;
                                               rdfs:comment "The measurement related to a feature of interest" ;
                                               rdfs:label "isMeasurementOf" .
@@ -80,19 +83,19 @@ xsd:Date rdf:type owl:AnnotationProperty ;
                                            rdfs:label "isPropertyOf" .
 
 
-###  https://saref.etsi.org/core/makeMeasurement
-<https://saref.etsi.org/core/makeMeasurement> rdf:type owl:ObjectProperty ;
-                                              owl:inverseOf <https://saref.etsi.org/core/measurementMadeBy> ;
-                                              rdfs:domain <https://saref.etsi.org/core/Device> ;
-                                              rdfs:range <https://saref.etsi.org/saref4envi/Measurement> ;
-                                              rdfs:comment "Device makes measurements" ;
-                                              rdfs:label "makeMeasurement" .
+###  https://saref.etsi.org/core/makesMeasurement
+<https://saref.etsi.org/core/makesMeasurement> rdf:type owl:ObjectProperty ;
+                                               owl:inverseOf <https://saref.etsi.org/core/measurementMadeBy> ;
+                                               rdfs:domain <https://saref.etsi.org/core/Device> ;
+                                               rdfs:range <https://saref.etsi.org/core/Measurement> ;
+                                               rdfs:comment "Device makes measurements" ;
+                                               rdfs:label "makesMeasurement" .
 
 
 ###  https://saref.etsi.org/core/measurementMadeBy
 <https://saref.etsi.org/core/measurementMadeBy> rdf:type owl:ObjectProperty ,
                                                          owl:FunctionalProperty ;
-                                                rdfs:domain <https://saref.etsi.org/saref4envi/Measurement> ;
+                                                rdfs:domain <https://saref.etsi.org/core/Measurement> ;
                                                 rdfs:range <https://saref.etsi.org/core/Device> ;
                                                 rdfs:comment "Measurement its made by a device" ;
                                                 rdfs:label "measurementMadeBy" .
@@ -103,7 +106,7 @@ xsd:Date rdf:type owl:AnnotationProperty ;
                                                    owl:inverseOf <https://saref.etsi.org/core/relatesToProperty> ;
                                                    rdf:type owl:FunctionalProperty ;
                                                    rdfs:domain <https://saref.etsi.org/core/Property> ;
-                                                   rdfs:range <https://saref.etsi.org/saref4envi/Measurement> ;
+                                                   rdfs:range <https://saref.etsi.org/core/Measurement> ;
                                                    rdfs:comment "Property relates to a measurement" ;
                                                    rdfs:label "relatesToMeasurement" .
 
@@ -111,7 +114,8 @@ xsd:Date rdf:type owl:AnnotationProperty ;
 ###  https://saref.etsi.org/core/relatesToProperty
 <https://saref.etsi.org/core/relatesToProperty> rdf:type owl:ObjectProperty ;
                                                 rdfs:subPropertyOf owl:topObjectProperty ;
-                                                rdfs:domain <https://saref.etsi.org/saref4envi/Measurement> ;
+                                                rdf:type owl:FunctionalProperty ;
+                                                rdfs:domain <https://saref.etsi.org/core/Measurement> ;
                                                 rdfs:range <https://saref.etsi.org/core/Property> ;
                                                 rdfs:comment "Measurement relates to a property" ;
                                                 rdfs:label "relatesToProperty" .
@@ -128,12 +132,12 @@ xsd:Date rdf:type owl:AnnotationProperty ;
           rdfs:label "causedBy" .
 
 
-###  https://www.w3id.org/aservo#hasLocation
-:hasLocation rdf:type owl:ObjectProperty ;
-             rdfs:domain <https://saref.etsi.org/core/FeatureOfInterest> ;
-             rdfs:range <https://saref.etsi.org/saref4envi/SpatialObject> ;
-             rdfs:comment "A feature of interest has a location represented by a spatial object" ;
-             rdfs:label "hasLocation" .
+###  https://www.w3id.org/aservo#hasDevice
+:hasDevice rdf:type owl:ObjectProperty ;
+           rdfs:subPropertyOf owl:topObjectProperty ;
+           rdfs:domain <https://saref.etsi.org/core/FeatureOfInterest> ;
+           rdfs:range <https://saref.etsi.org/core/Device> ;
+           rdfs:label "hasDevice" .
 
 
 ###  https://www.w3id.org/aservo:aservo#provokes
@@ -153,27 +157,55 @@ xsd:Date rdf:type owl:AnnotationProperty ;
 <http://www.w3.org/2003/01/geo/wgs84_pos#lat> rdf:type owl:DatatypeProperty ;
                                               rdfs:subPropertyOf owl:topDataProperty ;
                                               rdf:type owl:FunctionalProperty ;
-                                              rdfs:domain <https://saref.etsi.org/saref4envi/SpatialThing> ;
                                               rdfs:range xsd:decimal ;
                                               rdfs:comment "Latitude" ;
                                               rdfs:label "geo:lat" .
 
 
-###  http://www.w3.org/2003/01/geo/wgs84_pos#lon
-<http://www.w3.org/2003/01/geo/wgs84_pos#lon> rdf:type owl:DatatypeProperty ;
-                                              rdfs:subPropertyOf owl:topDataProperty ;
-                                              rdf:type owl:FunctionalProperty ;
-                                              rdfs:domain <https://saref.etsi.org/saref4envi/SpatialThing> ;
-                                              rdfs:range xsd:decimal ;
-                                              rdfs:comment "Longitude" ;
-                                              rdfs:label "geo:lon" .
+###  http://www.w3.org/2003/01/geo/wgs84_pos#long
+<http://www.w3.org/2003/01/geo/wgs84_pos#long> rdf:type owl:DatatypeProperty ;
+                                               rdfs:subPropertyOf owl:topDataProperty ;
+                                               rdf:type owl:FunctionalProperty ;
+                                               rdfs:range xsd:decimal ;
+                                               rdfs:comment "Longitude" ;
+                                               rdfs:label "geo:long" .
+
+
+###  https://saref.etsi.org/core/hasTimestamp
+<https://saref.etsi.org/core/hasTimestamp> rdf:type owl:DatatypeProperty ;
+                                           rdfs:subPropertyOf owl:topDataProperty ;
+                                           rdf:type owl:FunctionalProperty ;
+                                           rdfs:range xsd:dateTime .
+
+
+###  https://saref.etsi.org/core/hasValue
+<https://saref.etsi.org/core/hasValue> rdf:type owl:DatatypeProperty ;
+                                       rdfs:subPropertyOf owl:topDataProperty ;
+                                       rdf:type owl:FunctionalProperty ;
+                                       rdfs:domain <https://saref.etsi.org/core/Measurement> .
+
+
+###  https://www.w3id.org/aservo#area
+:area rdf:type owl:DatatypeProperty ;
+      rdfs:subPropertyOf owl:topDataProperty ;
+      rdf:type owl:FunctionalProperty ;
+      rdfs:domain <https://saref.etsi.org/core/FeatureOfInterest> ;
+      rdfs:range xsd:double .
+
+
+###  https://www.w3id.org/aservo#ha
+:ha rdf:type owl:DatatypeProperty ;
+    rdfs:subPropertyOf owl:topDataProperty ;
+    rdf:type owl:FunctionalProperty ;
+    rdfs:domain <https://saref.etsi.org/core/FeatureOfInterest> ;
+    rdfs:range xsd:double .
 
 
 ###  https://www.w3id.org/aservo#hasArea
 :hasArea rdf:type owl:DatatypeProperty ;
          rdfs:subPropertyOf owl:topDataProperty ;
          rdf:type owl:FunctionalProperty ;
-         rdfs:domain :PhisycalProperty ;
+         rdfs:domain :PhysicalProperty ;
          rdfs:range xsd:decimal ;
          rdfs:comment "Area of the lava flow" ;
          rdfs:label "hasArea" .
@@ -208,7 +240,7 @@ xsd:Date rdf:type owl:AnnotationProperty ;
 :hasDepth rdf:type owl:DatatypeProperty ;
           rdfs:subPropertyOf owl:topDataProperty ;
           rdf:type owl:FunctionalProperty ;
-          rdfs:domain :PhisycalProperty ;
+          rdfs:domain :PhysicalProperty ;
           rdfs:range xsd:decimal ;
           rdfs:comment "The depth of a seismic activity" ;
           rdfs:label "hasDepth" .
@@ -228,7 +260,7 @@ xsd:Date rdf:type owl:AnnotationProperty ;
 :hasHectares rdf:type owl:DatatypeProperty ;
              rdfs:subPropertyOf owl:topDataProperty ;
              rdf:type owl:FunctionalProperty ;
-             rdfs:domain :PhisycalProperty ;
+             rdfs:domain :PhysicalProperty ;
              rdfs:range xsd:decimal ;
              rdfs:comment "Hectares" ;
              rdfs:label "hasHectares" .
@@ -248,7 +280,7 @@ xsd:Date rdf:type owl:AnnotationProperty ;
 :hasIntensity rdf:type owl:DatatypeProperty ;
               rdfs:subPropertyOf owl:topDataProperty ;
               rdf:type owl:FunctionalProperty ;
-              rdfs:domain :PhisycalProperty ;
+              rdfs:domain :PhysicalProperty ;
               rdfs:range xsd:decimal ;
               rdfs:comment "The intensity of a seismic activity" ;
               rdfs:label "hasIntensity" .
@@ -258,7 +290,7 @@ xsd:Date rdf:type owl:AnnotationProperty ;
 :hasLongitude rdf:type owl:DatatypeProperty ;
               rdfs:subPropertyOf owl:topDataProperty ;
               rdf:type owl:FunctionalProperty ;
-              rdfs:domain :PhisycalProperty ;
+              rdfs:domain :PhysicalProperty ;
               rdfs:range xsd:decimal ;
               rdfs:comment "The longitude of a seismic activity" ;
               rdfs:label "hasLongitude" .
@@ -268,7 +300,7 @@ xsd:Date rdf:type owl:AnnotationProperty ;
 :hasMagnitude rdf:type owl:DatatypeProperty ;
               rdfs:subPropertyOf owl:topDataProperty ;
               rdf:type owl:FunctionalProperty ;
-              rdfs:domain :PhisycalProperty ;
+              rdfs:domain :PhysicalProperty ;
               rdfs:range xsd:decimal ;
               rdfs:comment "Magnitude of seismic activity" ;
               rdfs:label "hasMagnitude" .
@@ -307,7 +339,7 @@ xsd:Date rdf:type owl:AnnotationProperty ;
 :hasPerimeter rdf:type owl:DatatypeProperty ;
               rdfs:subPropertyOf owl:topDataProperty ;
               rdf:type owl:FunctionalProperty ;
-              rdfs:domain :PhisycalProperty ;
+              rdfs:domain :PhysicalProperty ;
               rdfs:range xsd:decimal ;
               rdfs:comment "Perimeter of a lava flow" ;
               rdfs:label "hasPerimeter" .
@@ -326,7 +358,7 @@ xsd:Date rdf:type owl:AnnotationProperty ;
 :hasShapeArea rdf:type owl:DatatypeProperty ;
               rdfs:subPropertyOf owl:topDataProperty ;
               rdf:type owl:FunctionalProperty ;
-              rdfs:domain :PhisycalProperty ;
+              rdfs:domain :PhysicalProperty ;
               rdfs:range xsd:decimal ;
               rdfs:comment "Shape Area of a lava flow" ;
               rdfs:label "hasShapeArea" .
@@ -336,7 +368,7 @@ xsd:Date rdf:type owl:AnnotationProperty ;
 :hasShapeLength rdf:type owl:DatatypeProperty ;
                 rdfs:subPropertyOf owl:topDataProperty ;
                 rdf:type owl:FunctionalProperty ;
-                rdfs:domain <https://saref.etsi.org/saref4envi/Measurement> ;
+                rdfs:domain <https://saref.etsi.org/core/Measurement> ;
                 rdfs:range xsd:decimal ;
                 rdfs:comment "Shape length of a lava flow" ;
                 rdfs:label "hasShapeLength" .
@@ -371,11 +403,34 @@ xsd:Date rdf:type owl:AnnotationProperty ;
                              rdfs:label "hasVolcanicExplosivityIndex" .
 
 
+###  https://www.w3id.org/aservo#length
+:length rdf:type owl:DatatypeProperty ;
+        rdfs:subPropertyOf owl:topDataProperty ;
+        rdf:type owl:FunctionalProperty ;
+        rdfs:domain <https://saref.etsi.org/core/FeatureOfInterest> ;
+        rdfs:range xsd:double .
+
+
+###  https://www.w3id.org/aservo#perimeter
+:perimeter rdf:type owl:DatatypeProperty ;
+           rdfs:subPropertyOf owl:topDataProperty ;
+           rdf:type owl:FunctionalProperty ;
+           rdfs:domain <https://saref.etsi.org/core/FeatureOfInterest> ;
+           rdfs:range xsd:double .
+
+
+###  https://www.w3id.org/aservo#shape_area
+:shape_area rdf:type owl:DatatypeProperty ,
+                     owl:FunctionalProperty ;
+            rdfs:domain <https://saref.etsi.org/core/FeatureOfInterest> ;
+            rdfs:range xsd:double .
+
+
 ###  https://www.w3id.org/aservo:aservo#hasLatitude
 <https://www.w3id.org/aservo:aservo#hasLatitude> rdf:type owl:DatatypeProperty ;
                                                  rdfs:subPropertyOf owl:topDataProperty ;
                                                  rdf:type owl:FunctionalProperty ;
-                                                 rdfs:domain :PhisycalProperty ;
+                                                 rdfs:domain :PhysicalProperty ;
                                                  rdfs:range xsd:decimal ;
                                                  rdfs:comment "The latitude of a seismic activity" ;
                                                  rdfs:label "hasLatitude" .
@@ -395,7 +450,7 @@ xsd:Date rdf:type owl:AnnotationProperty ;
 <urn:webprotege:ontology:6d655d97-618e-4cd2-840b-832a836ae541#isMagnitudeType> rdf:type owl:DatatypeProperty ;
                                                                                rdfs:subPropertyOf owl:topDataProperty ;
                                                                                rdf:type owl:FunctionalProperty ;
-                                                                               rdfs:domain <https://saref.etsi.org/saref4envi/Measurement> ;
+                                                                               rdfs:domain <https://saref.etsi.org/core/Measurement> ;
                                                                                rdfs:range xsd:string ;
                                                                                rdfs:comment "Type of magnitude measure on a seismic activity" ;
                                                                                rdfs:label "isMagnitudeType" .
@@ -405,8 +460,18 @@ xsd:Date rdf:type owl:AnnotationProperty ;
 #    Classes
 #################################################################
 
+###  http://www.w3.org/2003/01/geo/wgs84_pos#Point
+<http://www.w3.org/2003/01/geo/wgs84_pos#Point> rdf:type owl:Class ;
+                                                rdfs:subClassOf <http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing> .
+
+
+###  http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing
+<http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing> rdf:type owl:Class .
+
+
 ###  https://saref.etsi.org/core/Device
 <https://saref.etsi.org/core/Device> rdf:type owl:Class ;
+                                     rdfs:subClassOf <https://saref.etsi.org/core/FeatureOfInterest> ;
                                      rdfs:comment "The device used to measure somenthing"^^rdfs:Literal ;
                                      rdfs:label "Device" .
 
@@ -417,29 +482,20 @@ xsd:Date rdf:type owl:AnnotationProperty ;
                                                 rdfs:label "FeatureOfInterest" .
 
 
+###  https://saref.etsi.org/core/Measurement
+<https://saref.etsi.org/core/Measurement> rdf:type owl:Class ;
+                                          rdfs:comment "Measurement of a thing"^^rdfs:Literal ;
+                                          rdfs:label "Measurement" .
+
+
 ###  https://saref.etsi.org/core/Property
 <https://saref.etsi.org/core/Property> rdf:type owl:Class ;
                                        rdfs:comment "Property of a thing"^^rdfs:Literal ;
                                        rdfs:label "Property" .
 
 
-###  https://saref.etsi.org/saref4envi/Measurement
-<https://saref.etsi.org/saref4envi/Measurement> rdf:type owl:Class ;
-                                                rdfs:comment "Measurement of a thing"^^rdfs:Literal ;
-                                                rdfs:label "Measurement" .
-
-
-###  https://saref.etsi.org/saref4envi/SpatialObject
-<https://saref.etsi.org/saref4envi/SpatialObject> rdf:type owl:Class ;
-                                                  rdfs:comment "Spatial object"^^rdfs:Literal ;
-                                                  rdfs:label "SpatialObject" .
-
-
-###  https://saref.etsi.org/saref4envi/SpatialThing
-<https://saref.etsi.org/saref4envi/SpatialThing> rdf:type owl:Class ;
-                                                 rdfs:subClassOf <https://saref.etsi.org/saref4envi/SpatialObject> ;
-                                                 rdfs:comment "Spatial thing"^^rdfs:Literal ;
-                                                 rdfs:label "SpatialThing" .
+###  https://saref.etsi.org/core/UnitOfMeasure
+<https://saref.etsi.org/core/UnitOfMeasure> rdf:type owl:Class .
 
 
 ###  https://www.w3id.org/aservo#AffectedBuildings
@@ -484,9 +540,21 @@ xsd:Date rdf:type owl:AnnotationProperty ;
                      rdfs:label "HawaiianStrombolian" .
 
 
+###  https://www.w3id.org/aservo#HumidityLevel
+:HumidityLevel rdf:type owl:Class ;
+               rdfs:subClassOf :AirQuality ;
+               rdfs:label "HumidityLevel" .
+
+
+###  https://www.w3id.org/aservo#IlluminanceLevel
+:IlluminanceLevel rdf:type owl:Class ;
+                  rdfs:subClassOf :AirQuality ;
+                  rdfs:label "IlluminanceLevel" .
+
+
 ###  https://www.w3id.org/aservo#LavaFlow
 :LavaFlow rdf:type owl:Class ;
-          rdfs:subClassOf :PhisycalProperty ;
+          rdfs:subClassOf :PhysicalProperty ;
           rdfs:comment "Lava flow from a volcanic eruption" ;
           rdfs:label "LavaFlow" .
 
@@ -519,11 +587,11 @@ xsd:Date rdf:type owl:AnnotationProperty ;
                rdfs:label "PeleanPlinian" .
 
 
-###  https://www.w3id.org/aservo#PhisycalProperty
-:PhisycalProperty rdf:type owl:Class ;
+###  https://www.w3id.org/aservo#PhysicalProperty
+:PhysicalProperty rdf:type owl:Class ;
                   rdfs:subClassOf <https://saref.etsi.org/core/Property> ;
                   rdfs:comment "Physical properties"^^rdfs:Literal ;
-                  rdfs:label "PhisycalProperty" .
+                  rdfs:label "PhysicalProperty" .
 
 
 ###  https://www.w3id.org/aservo#Plinian
@@ -555,7 +623,7 @@ xsd:Date rdf:type owl:AnnotationProperty ;
 
 ###  https://www.w3id.org/aservo#SeismicActivity
 :SeismicActivity rdf:type owl:Class ;
-                 rdfs:subClassOf :PhisycalProperty ;
+                 rdfs:subClassOf :PhysicalProperty ;
                  rdfs:comment "Seismic activity properties"^^rdfs:Literal ;
                  rdfs:label "SeismicActivity" .
 
@@ -604,187 +672,6 @@ xsd:Date rdf:type owl:AnnotationProperty ;
                                                           rdfs:subClassOf <https://saref.etsi.org/core/Property> ;
                                                           rdfs:comment "Air quality properties"^^rdfs:Literal ;
                                                           rdfs:label "AirQualityProperties" .
-
-
-#################################################################
-#    Individuals
-#################################################################
-
-###  https://www.w3id.org/aservo#affectedpeople1
-:affectedpeople1 rdf:type owl:NamedIndividual ,
-                          :AffectedPeople ;
-                 :causedBy :volcanlapalma1 ;
-                 :hasNumberOfMen 826 ;
-                 :hasNumberOfWomen 844 .
-
-
-###  https://www.w3id.org/aservo#affectedpeople2
-:affectedpeople2 rdf:type owl:NamedIndividual ,
-                          :AffectedPeople ;
-                 :hasNumberOfMen 198 ;
-                 :hasNumberOfWomen 193 .
-
-
-###  https://www.w3id.org/aservo#affectedpeople3
-:affectedpeople3 rdf:type owl:NamedIndividual ,
-                          :AffectedPeople ;
-                 :hasNumberOfMen 80 ;
-                 :hasNumberOfWomen 76 .
-
-
-###  https://www.w3id.org/aservo#airqualitysensor001
-:airqualitysensor001 rdf:type owl:NamedIndividual ,
-                              :AirQualitySensor ;
-                     <https://saref.etsi.org/core/hasProperty> :no2level1 ,
-                                                               :o3level1 ,
-                                                               :so2level1 .
-
-
-###  https://www.w3id.org/aservo#lavaflow1
-:lavaflow1 rdf:type owl:NamedIndividual ,
-                    :LavaFlow ;
-           <https://saref.etsi.org/core/relatesToMeasurement> :lavaflowmeasurement1 .
-
-
-###  https://www.w3id.org/aservo#lavaflowmeasurement1
-:lavaflowmeasurement1 rdf:type owl:NamedIndividual ,
-                               <https://saref.etsi.org/saref4envi/Measurement> ;
-                      <https://saref.etsi.org/core/hasMeasurement> :lavaflow1 ;
-                      :hasArea 11360258.6178296 ;
-                      :hasHectares 1136.02586178296 ;
-                      :hasPerimeter 55080.9270797893 ;
-                      :hasShapeArea 14796038.3266602 ;
-                      :hasShapeLength 62828.82241109 .
-
-
-###  https://www.w3id.org/aservo#lavaflowsensor1
-:lavaflowsensor1 rdf:type owl:NamedIndividual ,
-                          :LavaFlowSensor ;
-                 <https://saref.etsi.org/core/hasProperty> :lavaflow1 .
-
-
-###  https://www.w3id.org/aservo#no2level1
-:no2level1 rdf:type owl:NamedIndividual ,
-                    :NO2Level ;
-           <https://saref.etsi.org/core/relatesToMeasurement> :no2level1measurement .
-
-
-###  https://www.w3id.org/aservo#no2level1measurement
-:no2level1measurement rdf:type owl:NamedIndividual ,
-                               <https://saref.etsi.org/saref4envi/Measurement> ;
-                      <https://saref.etsi.org/core/hasMeasurement> :no2level1 ;
-                      :hasHourAverage 38.56 ;
-                      :hasTime "2021-12-02T00:00:00+01:00" .
-
-
-###  https://www.w3id.org/aservo#no2level2
-:no2level2 rdf:type owl:NamedIndividual ,
-                    :NO2Level ;
-           <https://saref.etsi.org/core/relatesToMeasurement> :no2levelmeasurement2 .
-
-
-###  https://www.w3id.org/aservo#no2levelmeasurement2
-:no2levelmeasurement2 rdf:type owl:NamedIndividual ,
-                               <https://saref.etsi.org/saref4envi/Measurement> ;
-                      <https://saref.etsi.org/core/hasMeasurement> :no2level2 ;
-                      :hasHourAverage 40.67 ;
-                      :hasTime "2021-12-02T01:00:00+01:00" .
-
-
-###  https://www.w3id.org/aservo#o3level1
-:o3level1 rdf:type owl:NamedIndividual ,
-                   :O3Level ;
-          <https://saref.etsi.org/core/relatesToMeasurement> :o3levelmeasurement1 .
-
-
-###  https://www.w3id.org/aservo#o3levelmeasurement1
-:o3levelmeasurement1 rdf:type owl:NamedIndividual ,
-                              <https://saref.etsi.org/saref4envi/Measurement> ;
-                     <https://saref.etsi.org/core/hasMeasurement> :o3level1 ;
-                     :hasHourAverage 26.85 ;
-                     :hasTime "2021-12-02T12:00:00+01:00"^^xsd:dateTime .
-
-
-###  https://www.w3id.org/aservo#seismicactivity1
-:seismicactivity1 rdf:type owl:NamedIndividual ,
-                           :SeismicActivity ;
-                  <https://saref.etsi.org/core/relatesToMeasurement> :seismicactivitymeasurement1 .
-
-
-###  https://www.w3id.org/aservo#seismicactivity2
-:seismicactivity2 rdf:type owl:NamedIndividual ,
-                           :SeismicActivity ;
-                  <https://saref.etsi.org/core/relatesToMeasurement> :seismicactivitymeasurement2 .
-
-
-###  https://www.w3id.org/aservo#seismicactivitymeasurement1
-:seismicactivitymeasurement1 rdf:type owl:NamedIndividual ,
-                                      <https://saref.etsi.org/saref4envi/Measurement> ;
-                             <https://saref.etsi.org/core/hasMeasurement> :seismicactivity1 ;
-                             <http://www.w3.org/2003/01/geo/wgs84_pos#lat> 28.570 ;
-                             <http://www.w3.org/2003/01/geo/wgs84_pos#lon> -17.868 ;
-                             :hasDate "2021-09-18T00:24:46+01:00"^^xsd:dateTime ;
-                             :hasDepth 6.1 ;
-                             :hasIntensity 0 ;
-                             <urn:webprotege:ontology:6d655d97-618e-4cd2-840b-832a836ae541#isMagnitudeType> "mbLg" .
-
-
-###  https://www.w3id.org/aservo#seismicactivitymeasurement2
-:seismicactivitymeasurement2 rdf:type owl:NamedIndividual ,
-                                      <https://saref.etsi.org/saref4envi/Measurement> ;
-                             <https://saref.etsi.org/core/hasMeasurement> :seismicactivity2 ;
-                             <http://www.w3.org/2003/01/geo/wgs84_pos#lat> 28.570 ;
-                             <http://www.w3.org/2003/01/geo/wgs84_pos#lon> -17.868 ;
-                             :hasDate "2021-09-18T01:06:06+01:00"^^xsd:dateTime ;
-                             :hasDepth 6.1 ;
-                             :hasIntensity 0 ;
-                             <urn:webprotege:ontology:6d655d97-618e-4cd2-840b-832a836ae541#isMagnitudeType> "mbLg" .
-
-
-###  https://www.w3id.org/aservo#seismicactivitysensor2
-:seismicactivitysensor2 rdf:type owl:NamedIndividual ,
-                                 :SeismicActivitySensor ;
-                        <https://saref.etsi.org/core/hasProperty> :seismicactivity1 ,
-                                                                  :seismicactivity2 .
-
-
-###  https://www.w3id.org/aservo#so2level1
-:so2level1 rdf:type owl:NamedIndividual ,
-                    :SO2Level ;
-           :hasHourAverage 1.0 ;
-           :hasTime "2021-12-02T12:00:00+01:00" .
-
-
-###  https://www.w3id.org/aservo#so2levelmeasurement1
-:so2levelmeasurement1 rdf:type owl:NamedIndividual ,
-                               <https://saref.etsi.org/saref4envi/Measurement> .
-
-
-###  https://www.w3id.org/aservo#spatialthing1
-:spatialthing1 rdf:type owl:NamedIndividual ,
-                        <https://saref.etsi.org/saref4envi/SpatialThing> ;
-               <http://www.w3.org/2003/01/geo/wgs84_pos#lat> 0 ;
-               <http://www.w3.org/2003/01/geo/wgs84_pos#lon> 0 .
-
-
-###  https://www.w3id.org/aservo#volcanlapalma1
-:volcanlapalma1 rdf:type owl:NamedIndividual ,
-                         :VolcanicEruption ;
-                <https://saref.etsi.org/core/hasProperty> :lavaflow1 ,
-                                                          :no2level1 ,
-                                                          :o3level1 ,
-                                                          :seismicactivity1 ,
-                                                          :seismicactivity2 ,
-                                                          :so2level1 ;
-                <https://www.w3id.org/aservo:aservo#provokes> :affectedpeople1 ,
-                                                              :affectedpeople2 ,
-                                                              :affectedpeople3 ;
-                <http://www.w3.org/2003/01/geo/wgs84_pos#lat> 28.612778 ;
-                <http://www.w3.org/2003/01/geo/wgs84_pos#lon> -17.866111 ;
-                :hasDurationInDays 85 ;
-                :hasName "Cumbre Vieja" ;
-                :hasStartDate "2021-09-19T14:10:00+01:00"^^xsd:dateTime ;
-                :hasVolcanicExplosivityIndex 3 .
 
 
 #################################################################

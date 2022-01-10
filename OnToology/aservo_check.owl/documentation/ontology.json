@@ -470,28 +470,19 @@
     "@value" : "xsd:Date"
   } ]
 }, {
-  "@id" : "http://www.w3.org/2003/01/geo/wgs84_pos#Location",
-  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@value" : "Location of the spatial thing related with a spatial object"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://saref.etsi.org/saref4envi/SpatialObject"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@value" : "geo:Location"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "https://saref.etsi.org/saref4envi/SpatialThing"
+  "@id" : "http://www.w3.org/2003/01/geo/wgs84_pos#Point",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing"
   } ]
+}, {
+  "@id" : "http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
 }, {
   "@id" : "http://www.w3.org/2003/01/geo/wgs84_pos#lat",
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@value" : "Latitude"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://saref.etsi.org/saref4envi/SpatialThing"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@value" : "geo:lat"
@@ -503,16 +494,22 @@
     "@id" : "http://www.w3.org/2002/07/owl#topDataProperty"
   } ]
 }, {
-  "@id" : "http://www.w3.org/2003/01/geo/wgs84_pos#lon",
+  "@id" : "http://www.w3.org/2003/01/geo/wgs84_pos#location",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "Location of the spatial thing related with a spatial object"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "geo:location"
+  } ]
+}, {
+  "@id" : "http://www.w3.org/2003/01/geo/wgs84_pos#long",
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@value" : "Longitude"
   } ],
-  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://saref.etsi.org/saref4envi/SpatialThing"
-  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@value" : "geo:lon"
+    "@value" : "geo:long"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
     "@id" : "http://www.w3.org/2001/XMLSchema#decimal"
@@ -535,6 +532,9 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@value" : "Device"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://saref.etsi.org/core/FeatureOfInterest"
   } ]
 }, {
   "@id" : "https://saref.etsi.org/core/FeatureOfInterest",
@@ -547,6 +547,16 @@
     "@value" : "FeatureOfInterest"
   } ]
 }, {
+  "@id" : "https://saref.etsi.org/core/Measurement",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@type" : "http://www.w3.org/2000/01/rdf-schema#Literal",
+    "@value" : "Measurement of a thing"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "Measurement"
+  } ]
+}, {
   "@id" : "https://saref.etsi.org/core/Property",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
@@ -557,8 +567,11 @@
     "@value" : "Property"
   } ]
 }, {
+  "@id" : "https://saref.etsi.org/core/UnitOfMeasure",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+}, {
   "@id" : "https://saref.etsi.org/core/hasMeasurement",
-  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@value" : "Measures of a feature of interest"
   } ],
@@ -569,14 +582,14 @@
     "@value" : "hasMeasurement"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "https://saref.etsi.org/saref4envi/Measurement"
+    "@id" : "https://saref.etsi.org/core/Measurement"
   } ],
   "http://www.w3.org/2002/07/owl#inverseOf" : [ {
     "@id" : "https://saref.etsi.org/core/isMeasurementOf"
   } ]
 }, {
   "@id" : "https://saref.etsi.org/core/hasProperty",
-  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@value" : "Property of a feature of interest"
   } ],
@@ -593,13 +606,40 @@
     "@id" : "https://saref.etsi.org/core/isPropertyOf"
   } ]
 }, {
+  "@id" : "https://saref.etsi.org/core/hasTimestamp",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#dateTime"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://www.w3.org/2002/07/owl#topDataProperty"
+  } ]
+}, {
+  "@id" : "https://saref.etsi.org/core/hasValue",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://saref.etsi.org/core/Measurement"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://www.w3.org/2002/07/owl#topDataProperty"
+  } ]
+}, {
+  "@id" : "https://saref.etsi.org/core/isMeasuredIn",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://saref.etsi.org/core/Measurement"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://saref.etsi.org/core/UnitOfMeasure"
+  } ]
+}, {
   "@id" : "https://saref.etsi.org/core/isMeasurementOf",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@value" : "The measurement related to a feature of interest"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://saref.etsi.org/saref4envi/Measurement"
+    "@id" : "https://saref.etsi.org/core/Measurement"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@value" : "isMeasurementOf"
@@ -626,7 +666,7 @@
     "@id" : "http://www.w3.org/2002/07/owl#topObjectProperty"
   } ]
 }, {
-  "@id" : "https://saref.etsi.org/core/makeMeasurement",
+  "@id" : "https://saref.etsi.org/core/makesMeasurement",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@value" : "Device makes measurements"
@@ -635,10 +675,10 @@
     "@id" : "https://saref.etsi.org/core/Device"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@value" : "makeMeasurement"
+    "@value" : "makesMeasurement"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "https://saref.etsi.org/saref4envi/Measurement"
+    "@id" : "https://saref.etsi.org/core/Measurement"
   } ],
   "http://www.w3.org/2002/07/owl#inverseOf" : [ {
     "@id" : "https://saref.etsi.org/core/measurementMadeBy"
@@ -650,7 +690,7 @@
     "@value" : "Measurement its made by a device"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://saref.etsi.org/saref4envi/Measurement"
+    "@id" : "https://saref.etsi.org/core/Measurement"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@value" : "measurementMadeBy"
@@ -671,19 +711,19 @@
     "@value" : "relatesToMeasurement"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "https://saref.etsi.org/saref4envi/Measurement"
+    "@id" : "https://saref.etsi.org/core/Measurement"
   } ],
   "http://www.w3.org/2002/07/owl#inverseOf" : [ {
     "@id" : "https://saref.etsi.org/core/relatesToProperty"
   } ]
 }, {
   "@id" : "https://saref.etsi.org/core/relatesToProperty",
-  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@value" : "Measurement relates to a property"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://saref.etsi.org/saref4envi/Measurement"
+    "@id" : "https://saref.etsi.org/core/Measurement"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@value" : "relatesToProperty"
@@ -693,39 +733,6 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
     "@id" : "http://www.w3.org/2002/07/owl#topObjectProperty"
-  } ]
-}, {
-  "@id" : "https://saref.etsi.org/saref4envi/Measurement",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@type" : "http://www.w3.org/2000/01/rdf-schema#Literal",
-    "@value" : "Measurement of a thing"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@value" : "Measurement"
-  } ]
-}, {
-  "@id" : "https://saref.etsi.org/saref4envi/SpatialObject",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@type" : "http://www.w3.org/2000/01/rdf-schema#Literal",
-    "@value" : "Spatial object"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@value" : "SpatialObject"
-  } ]
-}, {
-  "@id" : "https://saref.etsi.org/saref4envi/SpatialThing",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@type" : "http://www.w3.org/2000/01/rdf-schema#Literal",
-    "@value" : "Spatial thing"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@value" : "SpatialThing"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "https://saref.etsi.org/saref4envi/SpatialObject"
   } ]
 }, {
   "@id" : "https://www.w3id.org/aservo",
@@ -816,6 +823,24 @@
     "@id" : "https://www.w3id.org/aservo#VolcanicEruption"
   } ]
 }, {
+  "@id" : "https://www.w3id.org/aservo#HumidityLevel",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "HumidityLevel"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://www.w3id.org/aservo#AirQuality"
+  } ]
+}, {
+  "@id" : "https://www.w3id.org/aservo#IlluminanceLevel",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "IlluminanceLevel"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://www.w3id.org/aservo#AirQuality"
+  } ]
+}, {
   "@id" : "https://www.w3id.org/aservo#LavaFlow",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
@@ -825,7 +850,7 @@
     "@value" : "LavaFlow"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "https://www.w3id.org/aservo#PhisycalProperty"
+    "@id" : "https://www.w3id.org/aservo#PhysicalProperty"
   } ]
 }, {
   "@id" : "https://www.w3id.org/aservo#LavaFlowSensor",
@@ -879,14 +904,14 @@
     "@id" : "https://www.w3id.org/aservo#VolcanicEruption"
   } ]
 }, {
-  "@id" : "https://www.w3id.org/aservo#PhisycalProperty",
+  "@id" : "https://www.w3id.org/aservo#PhysicalProperty",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@type" : "http://www.w3.org/2000/01/rdf-schema#Literal",
     "@value" : "Physical properties"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@value" : "PhisycalProperty"
+    "@value" : "PhysicalProperty"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
     "@id" : "https://saref.etsi.org/core/Property"
@@ -949,7 +974,7 @@
     "@value" : "SeismicActivity"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "https://www.w3id.org/aservo#PhisycalProperty"
+    "@id" : "https://www.w3id.org/aservo#PhysicalProperty"
   } ]
 }, {
   "@id" : "https://www.w3id.org/aservo#SeismicActivitySensor",
@@ -1015,50 +1040,16 @@
     "@id" : "https://www.w3id.org/aservo#VolcanicEruption"
   } ]
 }, {
-  "@id" : "https://www.w3id.org/aservo#affectedpeople1",
-  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "https://www.w3id.org/aservo#AffectedPeople" ],
-  "https://www.w3id.org/aservo#causedBy" : [ {
-    "@id" : "https://www.w3id.org/aservo#volcanlapalma1"
+  "@id" : "https://www.w3id.org/aservo#area",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://saref.etsi.org/core/FeatureOfInterest"
   } ],
-  "https://www.w3id.org/aservo#hasNumberOfMen" : [ {
-    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
-    "@value" : "826"
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#double"
   } ],
-  "https://www.w3id.org/aservo#hasNumberOfWomen" : [ {
-    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
-    "@value" : "844"
-  } ]
-}, {
-  "@id" : "https://www.w3id.org/aservo#affectedpeople2",
-  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "https://www.w3id.org/aservo#AffectedPeople" ],
-  "https://www.w3id.org/aservo#hasNumberOfMen" : [ {
-    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
-    "@value" : "198"
-  } ],
-  "https://www.w3id.org/aservo#hasNumberOfWomen" : [ {
-    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
-    "@value" : "193"
-  } ]
-}, {
-  "@id" : "https://www.w3id.org/aservo#affectedpeople3",
-  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "https://www.w3id.org/aservo#AffectedPeople" ],
-  "https://www.w3id.org/aservo#hasNumberOfMen" : [ {
-    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
-    "@value" : "80"
-  } ],
-  "https://www.w3id.org/aservo#hasNumberOfWomen" : [ {
-    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
-    "@value" : "76"
-  } ]
-}, {
-  "@id" : "https://www.w3id.org/aservo#airqualitysensor001",
-  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "https://www.w3id.org/aservo#AirQualitySensor" ],
-  "https://saref.etsi.org/core/hasProperty" : [ {
-    "@id" : "https://www.w3id.org/aservo#no2level1"
-  }, {
-    "@id" : "https://www.w3id.org/aservo#o3level1"
-  }, {
-    "@id" : "https://www.w3id.org/aservo#so2level1"
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://www.w3.org/2002/07/owl#topDataProperty"
   } ]
 }, {
   "@id" : "https://www.w3id.org/aservo#causedBy",
@@ -1082,13 +1073,25 @@
     "@id" : "https://www.w3id.org/aservo:aservo#provokes"
   } ]
 }, {
+  "@id" : "https://www.w3id.org/aservo#ha",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://saref.etsi.org/core/FeatureOfInterest"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#double"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://www.w3.org/2002/07/owl#topDataProperty"
+  } ]
+}, {
   "@id" : "https://www.w3id.org/aservo#hasArea",
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@value" : "Area of the lava flow"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://www.w3id.org/aservo#PhisycalProperty"
+    "@id" : "https://www.w3id.org/aservo#PhysicalProperty"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@value" : "hasArea"
@@ -1151,7 +1154,7 @@
     "@value" : "The depth of a seismic activity"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://www.w3id.org/aservo#PhisycalProperty"
+    "@id" : "https://www.w3id.org/aservo#PhysicalProperty"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@value" : "hasDepth"
@@ -1161,6 +1164,21 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
     "@id" : "http://www.w3.org/2002/07/owl#topDataProperty"
+  } ]
+}, {
+  "@id" : "https://www.w3id.org/aservo#hasDevice",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://saref.etsi.org/core/FeatureOfInterest"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "hasDevice"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://saref.etsi.org/core/Device"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://www.w3.org/2002/07/owl#topObjectProperty"
   } ]
 }, {
   "@id" : "https://www.w3id.org/aservo#hasDurationInDays",
@@ -1187,7 +1205,7 @@
     "@value" : "Hectares"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://www.w3id.org/aservo#PhisycalProperty"
+    "@id" : "https://www.w3id.org/aservo#PhysicalProperty"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@value" : "hasHectares"
@@ -1223,7 +1241,7 @@
     "@value" : "The intensity of a seismic activity"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://www.w3id.org/aservo#PhisycalProperty"
+    "@id" : "https://www.w3id.org/aservo#PhysicalProperty"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@value" : "hasIntensity"
@@ -1235,28 +1253,13 @@
     "@id" : "http://www.w3.org/2002/07/owl#topDataProperty"
   } ]
 }, {
-  "@id" : "https://www.w3id.org/aservo#hasLocation",
-  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@value" : "A feature of interest has a location represented by a spatial object"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://saref.etsi.org/core/FeatureOfInterest"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@value" : "hasLocation"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "https://saref.etsi.org/saref4envi/SpatialObject"
-  } ]
-}, {
   "@id" : "https://www.w3id.org/aservo#hasLongitude",
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@value" : "The longitude of a seismic activity"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://www.w3id.org/aservo#PhisycalProperty"
+    "@id" : "https://www.w3id.org/aservo#PhysicalProperty"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@value" : "hasLongitude"
@@ -1274,7 +1277,7 @@
     "@value" : "Magnitude of seismic activity"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://www.w3id.org/aservo#PhisycalProperty"
+    "@id" : "https://www.w3id.org/aservo#PhysicalProperty"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@value" : "hasMagnitude"
@@ -1343,7 +1346,7 @@
     "@value" : "Perimeter of a lava flow"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://www.w3id.org/aservo#PhisycalProperty"
+    "@id" : "https://www.w3id.org/aservo#PhysicalProperty"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@value" : "hasPerimeter"
@@ -1379,7 +1382,7 @@
     "@value" : "Shape Area of a lava flow"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://www.w3id.org/aservo#PhisycalProperty"
+    "@id" : "https://www.w3id.org/aservo#PhysicalProperty"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@value" : "hasShapeArea"
@@ -1397,7 +1400,7 @@
     "@value" : "Shape length of a lava flow"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://saref.etsi.org/saref4envi/Measurement"
+    "@id" : "https://saref.etsi.org/core/Measurement"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@value" : "hasShapeLength"
@@ -1460,248 +1463,37 @@
     "@id" : "http://www.w3.org/2001/XMLSchema#integer"
   } ]
 }, {
-  "@id" : "https://www.w3id.org/aservo#lavaflow1",
-  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "https://www.w3id.org/aservo#LavaFlow" ],
-  "https://saref.etsi.org/core/relatesToMeasurement" : [ {
-    "@id" : "https://www.w3id.org/aservo#lavaflowmeasurement1"
+  "@id" : "https://www.w3id.org/aservo#length",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://saref.etsi.org/core/FeatureOfInterest"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#double"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://www.w3.org/2002/07/owl#topDataProperty"
   } ]
 }, {
-  "@id" : "https://www.w3id.org/aservo#lavaflowmeasurement1",
-  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "https://saref.etsi.org/saref4envi/Measurement" ],
-  "https://saref.etsi.org/core/hasMeasurement" : [ {
-    "@id" : "https://www.w3id.org/aservo#lavaflow1"
+  "@id" : "https://www.w3id.org/aservo#perimeter",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://saref.etsi.org/core/FeatureOfInterest"
   } ],
-  "https://www.w3id.org/aservo#hasArea" : [ {
-    "@type" : "http://www.w3.org/2001/XMLSchema#decimal",
-    "@value" : "11360258.6178296"
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#double"
   } ],
-  "https://www.w3id.org/aservo#hasHectares" : [ {
-    "@type" : "http://www.w3.org/2001/XMLSchema#decimal",
-    "@value" : "1136.02586178296"
-  } ],
-  "https://www.w3id.org/aservo#hasPerimeter" : [ {
-    "@type" : "http://www.w3.org/2001/XMLSchema#decimal",
-    "@value" : "55080.9270797893"
-  } ],
-  "https://www.w3id.org/aservo#hasShapeArea" : [ {
-    "@type" : "http://www.w3.org/2001/XMLSchema#decimal",
-    "@value" : "14796038.3266602"
-  } ],
-  "https://www.w3id.org/aservo#hasShapeLength" : [ {
-    "@type" : "http://www.w3.org/2001/XMLSchema#decimal",
-    "@value" : "62828.82241109"
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://www.w3.org/2002/07/owl#topDataProperty"
   } ]
 }, {
-  "@id" : "https://www.w3id.org/aservo#lavaflowsensor1",
-  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "https://www.w3id.org/aservo#LavaFlowSensor" ],
-  "https://saref.etsi.org/core/hasProperty" : [ {
-    "@id" : "https://www.w3id.org/aservo#lavaflow1"
-  } ]
-}, {
-  "@id" : "https://www.w3id.org/aservo#no2level1",
-  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "https://www.w3id.org/aservo#NO2Level" ],
-  "https://saref.etsi.org/core/relatesToMeasurement" : [ {
-    "@id" : "https://www.w3id.org/aservo#no2level1measurement"
-  } ]
-}, {
-  "@id" : "https://www.w3id.org/aservo#no2level1measurement",
-  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "https://saref.etsi.org/saref4envi/Measurement" ],
-  "https://saref.etsi.org/core/hasMeasurement" : [ {
-    "@id" : "https://www.w3id.org/aservo#no2level1"
+  "@id" : "https://www.w3id.org/aservo#shape_area",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://saref.etsi.org/core/FeatureOfInterest"
   } ],
-  "https://www.w3id.org/aservo#hasHourAverage" : [ {
-    "@type" : "http://www.w3.org/2001/XMLSchema#decimal",
-    "@value" : "38.56"
-  } ],
-  "https://www.w3id.org/aservo#hasTime" : [ {
-    "@value" : "2021-12-02T00:00:00+01:00"
-  } ]
-}, {
-  "@id" : "https://www.w3id.org/aservo#no2level2",
-  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "https://www.w3id.org/aservo#NO2Level" ],
-  "https://saref.etsi.org/core/relatesToMeasurement" : [ {
-    "@id" : "https://www.w3id.org/aservo#no2levelmeasurement2"
-  } ]
-}, {
-  "@id" : "https://www.w3id.org/aservo#no2levelmeasurement2",
-  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "https://saref.etsi.org/saref4envi/Measurement" ],
-  "https://saref.etsi.org/core/hasMeasurement" : [ {
-    "@id" : "https://www.w3id.org/aservo#no2level2"
-  } ],
-  "https://www.w3id.org/aservo#hasHourAverage" : [ {
-    "@type" : "http://www.w3.org/2001/XMLSchema#decimal",
-    "@value" : "40.67"
-  } ],
-  "https://www.w3id.org/aservo#hasTime" : [ {
-    "@value" : "2021-12-02T01:00:00+01:00"
-  } ]
-}, {
-  "@id" : "https://www.w3id.org/aservo#o3level1",
-  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "https://www.w3id.org/aservo#O3Level" ],
-  "https://saref.etsi.org/core/relatesToMeasurement" : [ {
-    "@id" : "https://www.w3id.org/aservo#o3levelmeasurement1"
-  } ]
-}, {
-  "@id" : "https://www.w3id.org/aservo#o3levelmeasurement1",
-  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "https://saref.etsi.org/saref4envi/Measurement" ],
-  "https://saref.etsi.org/core/hasMeasurement" : [ {
-    "@id" : "https://www.w3id.org/aservo#o3level1"
-  } ],
-  "https://www.w3id.org/aservo#hasHourAverage" : [ {
-    "@type" : "http://www.w3.org/2001/XMLSchema#decimal",
-    "@value" : "26.85"
-  } ],
-  "https://www.w3id.org/aservo#hasTime" : [ {
-    "@type" : "http://www.w3.org/2001/XMLSchema#dateTime",
-    "@value" : "2021-12-02T12:00:00+01:00"
-  } ]
-}, {
-  "@id" : "https://www.w3id.org/aservo#seismicactivity1",
-  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "https://www.w3id.org/aservo#SeismicActivity" ],
-  "https://saref.etsi.org/core/relatesToMeasurement" : [ {
-    "@id" : "https://www.w3id.org/aservo#seismicactivitymeasurement1"
-  } ]
-}, {
-  "@id" : "https://www.w3id.org/aservo#seismicactivity2",
-  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "https://www.w3id.org/aservo#SeismicActivity" ],
-  "https://saref.etsi.org/core/relatesToMeasurement" : [ {
-    "@id" : "https://www.w3id.org/aservo#seismicactivitymeasurement2"
-  } ]
-}, {
-  "@id" : "https://www.w3id.org/aservo#seismicactivitymeasurement1",
-  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "https://saref.etsi.org/saref4envi/Measurement" ],
-  "http://www.w3.org/2003/01/geo/wgs84_pos#lat" : [ {
-    "@type" : "http://www.w3.org/2001/XMLSchema#decimal",
-    "@value" : "28.570"
-  } ],
-  "http://www.w3.org/2003/01/geo/wgs84_pos#lon" : [ {
-    "@type" : "http://www.w3.org/2001/XMLSchema#decimal",
-    "@value" : "-17.868"
-  } ],
-  "https://saref.etsi.org/core/hasMeasurement" : [ {
-    "@id" : "https://www.w3id.org/aservo#seismicactivity1"
-  } ],
-  "https://www.w3id.org/aservo#hasDate" : [ {
-    "@type" : "http://www.w3.org/2001/XMLSchema#dateTime",
-    "@value" : "2021-09-18T00:24:46+01:00"
-  } ],
-  "https://www.w3id.org/aservo#hasDepth" : [ {
-    "@type" : "http://www.w3.org/2001/XMLSchema#decimal",
-    "@value" : "6.1"
-  } ],
-  "https://www.w3id.org/aservo#hasIntensity" : [ {
-    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
-    "@value" : "0"
-  } ],
-  "urn:webprotege:ontology:6d655d97-618e-4cd2-840b-832a836ae541#isMagnitudeType" : [ {
-    "@value" : "mbLg"
-  } ]
-}, {
-  "@id" : "https://www.w3id.org/aservo#seismicactivitymeasurement2",
-  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "https://saref.etsi.org/saref4envi/Measurement" ],
-  "http://www.w3.org/2003/01/geo/wgs84_pos#lat" : [ {
-    "@type" : "http://www.w3.org/2001/XMLSchema#decimal",
-    "@value" : "28.570"
-  } ],
-  "http://www.w3.org/2003/01/geo/wgs84_pos#lon" : [ {
-    "@type" : "http://www.w3.org/2001/XMLSchema#decimal",
-    "@value" : "-17.868"
-  } ],
-  "https://saref.etsi.org/core/hasMeasurement" : [ {
-    "@id" : "https://www.w3id.org/aservo#seismicactivity2"
-  } ],
-  "https://www.w3id.org/aservo#hasDate" : [ {
-    "@type" : "http://www.w3.org/2001/XMLSchema#dateTime",
-    "@value" : "2021-09-18T01:06:06+01:00"
-  } ],
-  "https://www.w3id.org/aservo#hasDepth" : [ {
-    "@type" : "http://www.w3.org/2001/XMLSchema#decimal",
-    "@value" : "6.1"
-  } ],
-  "https://www.w3id.org/aservo#hasIntensity" : [ {
-    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
-    "@value" : "0"
-  } ],
-  "urn:webprotege:ontology:6d655d97-618e-4cd2-840b-832a836ae541#isMagnitudeType" : [ {
-    "@value" : "mbLg"
-  } ]
-}, {
-  "@id" : "https://www.w3id.org/aservo#seismicactivitysensor2",
-  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "https://www.w3id.org/aservo#SeismicActivitySensor" ],
-  "https://saref.etsi.org/core/hasProperty" : [ {
-    "@id" : "https://www.w3id.org/aservo#seismicactivity1"
-  }, {
-    "@id" : "https://www.w3id.org/aservo#seismicactivity2"
-  } ]
-}, {
-  "@id" : "https://www.w3id.org/aservo#so2level1",
-  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "https://www.w3id.org/aservo#SO2Level" ],
-  "https://www.w3id.org/aservo#hasHourAverage" : [ {
-    "@type" : "http://www.w3.org/2001/XMLSchema#decimal",
-    "@value" : "1.0"
-  } ],
-  "https://www.w3id.org/aservo#hasTime" : [ {
-    "@value" : "2021-12-02T12:00:00+01:00"
-  } ]
-}, {
-  "@id" : "https://www.w3id.org/aservo#so2levelmeasurement1",
-  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "https://saref.etsi.org/saref4envi/Measurement" ]
-}, {
-  "@id" : "https://www.w3id.org/aservo#spatialthing1",
-  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "https://saref.etsi.org/saref4envi/SpatialThing" ],
-  "http://www.w3.org/2003/01/geo/wgs84_pos#lat" : [ {
-    "@type" : "http://www.w3.org/2001/XMLSchema#decimal",
-    "@value" : "0"
-  } ],
-  "http://www.w3.org/2003/01/geo/wgs84_pos#lon" : [ {
-    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
-    "@value" : "0"
-  } ]
-}, {
-  "@id" : "https://www.w3id.org/aservo#volcanlapalma1",
-  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "https://www.w3id.org/aservo#VolcanicEruption" ],
-  "http://www.w3.org/2003/01/geo/wgs84_pos#lat" : [ {
-    "@type" : "http://www.w3.org/2001/XMLSchema#decimal",
-    "@value" : "28.612778"
-  } ],
-  "http://www.w3.org/2003/01/geo/wgs84_pos#lon" : [ {
-    "@type" : "http://www.w3.org/2001/XMLSchema#decimal",
-    "@value" : "-17.866111"
-  } ],
-  "https://saref.etsi.org/core/hasProperty" : [ {
-    "@id" : "https://www.w3id.org/aservo#lavaflow1"
-  }, {
-    "@id" : "https://www.w3id.org/aservo#no2level1"
-  }, {
-    "@id" : "https://www.w3id.org/aservo#o3level1"
-  }, {
-    "@id" : "https://www.w3id.org/aservo#seismicactivity1"
-  }, {
-    "@id" : "https://www.w3id.org/aservo#seismicactivity2"
-  }, {
-    "@id" : "https://www.w3id.org/aservo#so2level1"
-  } ],
-  "https://www.w3id.org/aservo#hasDurationInDays" : [ {
-    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
-    "@value" : "85"
-  } ],
-  "https://www.w3id.org/aservo#hasName" : [ {
-    "@value" : "Cumbre Vieja"
-  } ],
-  "https://www.w3id.org/aservo#hasStartDate" : [ {
-    "@type" : "http://www.w3.org/2001/XMLSchema#dateTime",
-    "@value" : "2021-09-19T14:10:00+01:00"
-  } ],
-  "https://www.w3id.org/aservo#hasVolcanicExplosivityIndex" : [ {
-    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
-    "@value" : "3"
-  } ],
-  "https://www.w3id.org/aservo:aservo#provokes" : [ {
-    "@id" : "https://www.w3id.org/aservo#affectedpeople1"
-  }, {
-    "@id" : "https://www.w3id.org/aservo#affectedpeople2"
-  }, {
-    "@id" : "https://www.w3id.org/aservo#affectedpeople3"
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#double"
   } ]
 }, {
   "@id" : "https://www.w3id.org/aservo:aservo#AirQualityProperties",
@@ -1723,7 +1515,7 @@
     "@value" : "The latitude of a seismic activity"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://www.w3id.org/aservo#PhisycalProperty"
+    "@id" : "https://www.w3id.org/aservo#PhysicalProperty"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@value" : "hasLatitude"
@@ -1780,7 +1572,7 @@
     "@value" : "Type of magnitude measure on a seismic activity"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://saref.etsi.org/saref4envi/Measurement"
+    "@id" : "https://saref.etsi.org/core/Measurement"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@value" : "isMagnitudeType"

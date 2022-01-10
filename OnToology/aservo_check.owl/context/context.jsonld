@@ -3,12 +3,23 @@
     "VulcanianExplosivePelean" : {
       "@id" : "https://www.w3id.org/aservo#VulcanianExplosivePelean"
     },
+    "UnitOfMeasure" : {
+      "@id" : "https://saref.etsi.org/core/UnitOfMeasure"
+    },
     "PeleanPlinian" : {
       "@id" : "https://www.w3id.org/aservo#PeleanPlinian"
     },
     "hasVolcanicExplosivityIndex" : {
       "@id" : "https://www.w3id.org/aservo#hasVolcanicExplosivityIndex",
       "@type" : "http://www.w3.org/2001/XMLSchema#integer"
+    },
+    "shape_area" : {
+      "@id" : "https://www.w3id.org/aservo#shape_area",
+      "@type" : "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "hasDevice" : {
+      "@id" : "https://www.w3id.org/aservo#hasDevice",
+      "@type" : "@id"
     },
     "causedBy" : {
       "@id" : "https://www.w3id.org/aservo#causedBy",
@@ -30,18 +41,28 @@
       "@id" : "https://www.w3id.org/aservo#hasName",
       "@type" : "http://www.w3.org/2001/XMLSchema#string"
     },
+    "area" : {
+      "@id" : "https://www.w3id.org/aservo#area",
+      "@type" : "http://www.w3.org/2001/XMLSchema#double"
+    },
     "FeatureOfInterest" : {
       "@id" : "https://saref.etsi.org/core/FeatureOfInterest"
     },
-    "makeMeasurement" : {
-      "@id" : "https://saref.etsi.org/core/makeMeasurement",
-      "@type" : "@id"
+    "hasValue" : {
+      "@id" : "https://saref.etsi.org/core/hasValue"
+    },
+    "long" : {
+      "@id" : "http://www.w3.org/2003/01/geo/wgs84_pos#long",
+      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
     },
     "Vulcanian" : {
       "@id" : "https://www.w3id.org/aservo#Vulcanian"
     },
     "label" : {
       "@id" : "http://www.w3.org/2000/01/rdf-schema#label"
+    },
+    "HumidityLevel" : {
+      "@id" : "https://www.w3id.org/aservo#HumidityLevel"
     },
     "PlinianaUltraplinian" : {
       "@id" : "https://www.w3id.org/aservo#PlinianaUltraplinian"
@@ -50,11 +71,7 @@
       "@id" : "https://www.w3id.org/aservo#PopulationRisks"
     },
     "Measurement" : {
-      "@id" : "https://saref.etsi.org/saref4envi/Measurement"
-    },
-    "Location" : {
-      "@id" : "http://www.w3.org/2003/01/geo/wgs84_pos#Location",
-      "@type" : "@id"
+      "@id" : "https://saref.etsi.org/core/Measurement"
     },
     "NO2Level" : {
       "@id" : "https://www.w3id.org/aservo#NO2Level"
@@ -125,12 +142,12 @@
     "Hawaiian" : {
       "@id" : "https://www.w3id.org/aservo#Hawaiian"
     },
+    "location" : {
+      "@id" : "http://www.w3.org/2003/01/geo/wgs84_pos#location",
+      "@type" : "@id"
+    },
     "hasMagnitude" : {
       "@id" : "https://www.w3id.org/aservo#hasMagnitude",
-      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
-    },
-    "lon" : {
-      "@id" : "http://www.w3.org/2003/01/geo/wgs84_pos#lon",
       "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
     },
     "isMeasurementOf" : {
@@ -144,15 +161,33 @@
     "AirQuality" : {
       "@id" : "https://www.w3id.org/aservo#AirQuality"
     },
+    "ha" : {
+      "@id" : "https://www.w3id.org/aservo#ha",
+      "@type" : "http://www.w3.org/2001/XMLSchema#double"
+    },
     "hasLongitude" : {
       "@id" : "https://www.w3id.org/aservo#hasLongitude",
       "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
     },
+    "IlluminanceLevel" : {
+      "@id" : "https://www.w3id.org/aservo#IlluminanceLevel"
+    },
     "SeismicActivity" : {
       "@id" : "https://www.w3id.org/aservo#SeismicActivity"
     },
+    "Point" : {
+      "@id" : "http://www.w3.org/2003/01/geo/wgs84_pos#Point"
+    },
     "VolcanicEruption" : {
       "@id" : "https://www.w3id.org/aservo#VolcanicEruption"
+    },
+    "length" : {
+      "@id" : "https://www.w3id.org/aservo#length",
+      "@type" : "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "makesMeasurement" : {
+      "@id" : "https://saref.etsi.org/core/makesMeasurement",
+      "@type" : "@id"
     },
     "Property" : {
       "@id" : "https://saref.etsi.org/core/Property"
@@ -160,12 +195,13 @@
     "AffectedPeople" : {
       "@id" : "https://www.w3id.org/aservo#AffectedPeople"
     },
+    "isMeasuredIn" : {
+      "@id" : "https://saref.etsi.org/core/isMeasuredIn",
+      "@type" : "@id"
+    },
     "hasCity" : {
       "@id" : "https://www.w3id.org/aservo#hasCity",
       "@type" : "http://www.w3.org/2001/XMLSchema#string"
-    },
-    "SpatialObject" : {
-      "@id" : "https://saref.etsi.org/saref4envi/SpatialObject"
     },
     "StrombolianVulcanian" : {
       "@id" : "https://www.w3id.org/aservo#StrombolianVulcanian"
@@ -176,6 +212,10 @@
     },
     "LavaFlowSensor" : {
       "@id" : "https://www.w3id.org/aservo#LavaFlowSensor"
+    },
+    "perimeter" : {
+      "@id" : "https://www.w3id.org/aservo#perimeter",
+      "@type" : "http://www.w3.org/2001/XMLSchema#double"
     },
     "hasShapeArea" : {
       "@id" : "https://www.w3id.org/aservo#hasShapeArea",
@@ -209,7 +249,7 @@
       "@type" : "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "SpatialThing" : {
-      "@id" : "https://saref.etsi.org/saref4envi/SpatialThing"
+      "@id" : "http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing"
     },
     "hasDurationInDays" : {
       "@id" : "https://www.w3id.org/aservo#hasDurationInDays",
@@ -242,9 +282,12 @@
     "Plinian" : {
       "@id" : "https://www.w3id.org/aservo#Plinian"
     },
-    "hasLocation" : {
-      "@id" : "https://www.w3id.org/aservo#hasLocation",
-      "@type" : "@id"
+    "hasTimestamp" : {
+      "@id" : "https://saref.etsi.org/core/hasTimestamp",
+      "@type" : "http://www.w3.org/2001/XMLSchema#dateTime"
+    },
+    "PhysicalProperty" : {
+      "@id" : "https://www.w3id.org/aservo#PhysicalProperty"
     },
     "provokes" : {
       "@id" : "https://www.w3id.org/aservo:aservo#provokes",
@@ -253,9 +296,6 @@
     "hasHectares" : {
       "@id" : "https://www.w3id.org/aservo#hasHectares",
       "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
-    },
-    "PhisycalProperty" : {
-      "@id" : "https://www.w3id.org/aservo#PhisycalProperty"
     },
     "hasStartDate" : {
       "@id" : "https://www.w3id.org/aservo#hasStartDate",

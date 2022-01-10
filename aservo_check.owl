@@ -1,31 +1,3 @@
-
-Skip to content
-Pull requests
-Issues
-Marketplace
-Explore
-@jsemitiels
-aolite /
-Vulcanology
-Public
-
-Code
-Issues
-Pull requests
-Actions
-Projects
-Wiki
-Security
-
-    Insights
-
-Vulcanology/Ontology/aservo.owl
-@aolite
-aolite Creation of all loaders
-Latest commit 497d758 22 hours ago
-History
-1 contributor
-1462 lines (1110 sloc) 68.9 KB
 <?xml version="1.0"?>
 <rdf:RDF xmlns="https://www.w3id.org/aservo#"
      xml:base="https://www.w3id.org/aservo"
